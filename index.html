@@ -1,239 +1,226 @@
 <!DOCTYPE html>
-<html lang='ja'>
+<html lang="ja">
 
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>traceWebPage | ラムネ美容室</title>
-  <link rel='stylesheet' href='./assets/css/destyle.css'>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+  <link rel="stylesheet" href="./assets/css/destyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel='stylesheet' href='./assets/css/style.css'>
+  <link rel="stylesheet" href="./assets/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js'></script>  
-  <script src='./assets/js/behavior.js' defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>  
+  <script src="./assets/js/behavior.js" defer></script>
 </head>
 
 <body>
-<div id="loading" class='loading keep'>
-  <div class='frame gif-logo'><img src='./assets/img/loading.gif' alt='色が次々と変化するラムネ美容室のローディング画面用ロゴ'></div>
-</div>
+<!-- <div id="loading" class="loading keep">
+  <img class="image" src="./assets/img/loading.gif" alt="色が次々と変化するラムネ美容室のローディング画面用ロゴ">
+</div> -->
 <header>
   <div class="previous-container">
-    <div class='frame logo'><img src='./assets/img/logo.svg' alt='ラムネ美容室のロゴ'></div>
-    <nav class='main-nav'>
+    <img class="image logo" src="./assets/img/logo.svg" alt="ラムネ美容室のロゴ">
+    <nav class="main-nav">
       <div id="to-section-link-btn" class="to-section-link-btn">
         <div></div>
         <div></div>
         <div></div>
       </div>
       <ul id="contents-links">
-        <li><a href='#blog'>blog</a></li>
-        <li><a href='#about'>about</a></li>
-        <li><a href='#staff'>staff</a></li>
-        <li><a href='#menu'>menu</a></li>
-        <li><a href='#style'>style</a></li>
-        <li><a href='#recruit'>recruit</a></li>
+        <li><a href="#blog">blog</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#staff">staff</a></li>
+        <li><a href="#menu">menu</a></li>
+        <li><a href="#style">style</a></li>
+        <li><a href="#recruit">recruit</a></li>
       </ul>
       <ul>
-        <li><a href='#reserve'>reserve</a></li>
-        <li><a href='#' class='fa-brands fa-instagram'></a></li>
+        <li><a href="#reserve">reserve</a></li>
+        <li><a href="#" class="fa-brands fa-instagram"></a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <main>
-  <figure class='main-visual'>
+  <figure class="main-visual">
     <div class="media-wrapper">
       <video playsinline autoplay loop muted> 
-        <source src='./assets/img/movie/main.mp4' type='video/mp4'>
+        <source src="./assets/img/movie/main.mp4" type="video/mp4">
       </video>
-      <div id='bgm-play-stop' class='bgm-play-stop fa-solid fa-volume-high'></div>
-      <audio id='bg-music' src='./assets/music/you-wont-see-me.mp3' loop></audio>
+      <div id="bgm-play-stop" class="bgm-play-stop fa-solid fa-volume-high"></div>
+      <audio id="bg-music" src="./assets/music/you-wont-see-me.mp3" loop></audio>
     </div>
-    <figcaption class='per-char'>前を通れば目を引く大きな扉。<br>一歩入れば遊び心のある、<br>かわいい店内が広がります。<br>感性広がる空間で<br>「似合わせ」を大切にした、<br>ヘアスタイルをお楽しみください。</figcaption>
+    <figcaption class="per-char">前を通れば目を引く大きな扉。<br>一歩入れば遊び心のある、<br>かわいい店内が広がります。<br>感性広がる空間で<br>「似合わせ」を大切にした、<br>ヘアスタイルをお楽しみください。</figcaption>
   </figure>
-  <!-- <audio id='bg-music' src='./assets/music/ireland-120522.mp3' loop></audio> -->
+  <!-- <audio id="bg-music" src="./assets/music/ireland-120522.mp3" loop></audio> -->
 
-  <section id='blog' class='blog'>
-    <div class='container'>
-      <h2 class='contents-title'>blog</h2>
-      <ul id='one-after-another-row'>
+  <section id="blog" class="blog">
+    <div class="container">
+      <h2 class="contents-title">blog</h2>
+      <ul id="one-after-another-row">
         <li>
           <a href="#">
-            <div class='frame'><img src='./assets/img/01-D77D1A3E-4819-4065-BEA4-F1D7DB4C57F7-900x1200.jpg' alt='ブログタイトル『休日。〜趣味編〜』のイメージ画像'></div>
-            <div class='date'><time datetime='2023-05-18'>2023.05.18</time></div>
+            <img class="image" src="./assets/img/01-D77D1A3E-4819-4065-BEA4-F1D7DB4C57F7-900x1200.jpg" alt="ブログタイトル『休日。〜趣味編〜』のイメージ画像">
+            <time class="blog-date" datetime="2023-05-18">2023.05.18</time>
             <p>休日。〜趣味編〜</p>        
           </a>
         </li>
         <li>
           <a href="#">
-            <div class='frame'><img src='./assets/img/02-D5E1146A-5AAF-4475-AB09-A90B5B6B1C25-1200x900.jpeg' alt='ブログタイトル『ラムネファミリーでお出かけ。』のイメージ画像'></div>
-            <div class='date'><time datetime='2023-04-25'>2023.04.25</time></div>          
+            <img class="image" src="./assets/img/02-D5E1146A-5AAF-4475-AB09-A90B5B6B1C25-1200x900.jpeg" alt="ブログタイトル『ラムネファミリーでお出かけ。』のイメージ画像">
+            <time class="blog-date" datetime="2023-04-25">2023.04.25</time>
             <p>ラムネファミリーでお出かけ。</p>            
           </a>
         </li>
         <li>
           <a href="#">
-            <div class='frame'><img src='./assets/img/03-720D603B-41DC-4E6A-BCC0-6EF7787AB36C-900x1200.jpeg' alt='ブログタイトル『ご飯』のイメージ画像'></div>
-            <div class='date'><time datetime='2022-11-20'>2022.11.20</time></div>
+            <img class="image" src="./assets/img/03-720D603B-41DC-4E6A-BCC0-6EF7787AB36C-900x1200.jpeg" alt="ブログタイトル『ご飯』のイメージ画像">
+            <time class="blog-date" datetime="2022-11-20">2022.11.20</time>
             <p>ご飯🍴</p>
           </a>
         </li>
         <li>
           <a href="#">
-            <div class='frame'><img src='./assets/img/04-97927308-04E2-4F90-9B71-132C54AADC5E-900x1200.jpg' alt='ブログタイトル『styling item』のイメージ画像'></div>
-            <div class='date'><time datetime='2022-11-03'>2022.11.03</time></div>
+            <img class="image" src="./assets/img/04-97927308-04E2-4F90-9B71-132C54AADC5E-900x1200.jpg" alt="ブログタイトル『styling item』のイメージ画像">
+            <time class="blog-date" datetime="2022-11-03">2022.11.03</time>
             <p>styling item。</p>        
           </a>
         </li>
         <li>
           <a href="#">
-            <div class='frame'><img src='./assets/img/05-CD6E54A8-97B0-4BB6-B7D9-8274883476F8-900x1200.jpeg' alt='ブログタイトル『🛍💚』のイメージ画像'> </div>
-            <div class='date'><time datetime='2022-10-20'>2022.10.20</time></div>
+            <img class="image" src="./assets/img/05-CD6E54A8-97B0-4BB6-B7D9-8274883476F8-900x1200.jpeg" alt="ブログタイトル『🛍💚』のイメージ画像">
+            <time class="blog-date" datetime="2022-10-20">2022.10.20</time>
             <p>🛍💚</p>        
           </a>
         </li>
       </ul>
     </div>
-    <a href="#">
-      <div class='view-more'>
+    <!-- <a href="#">
+      <div class="view-more">
         <div class="wrapper">VIEW MORE</div>
       </div>
-    </a>
-  </section>
+    </a> -->
+    <div class="vm-container">
+        <a class="vm" href="#">VIEW MORE</a>
+    </div>
 
-  <section id='about' class='about'>
-    <div class='container'>
-      <h2 class='contents-title'>about</h2>
-      <div class='salon-vibe'>
+  </section>
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="contents-title">about</h2>
+      <div class="salon-vibe">
         <figure>
           <div class="media-wrapper">
             <video playsinline autoplay loop muted>
-              <source src='./assets/img/movie/2297638451.mp4' type='video/mp4'>
+              <source src="./assets/img/movie/2297638451.mp4" type="video/mp4">
             </video>
           </div>
-          <figcaption class='per-char'>可愛い雑貨や<br>小物に囲まれて。</figcaption>
+          <figcaption class="per-char">可愛い雑貨や<br>小物に囲まれて。</figcaption>
         </figure>
         <figure>
           <div class="media-wrapper">
             <video playsinline autoplay loop muted">
-              <source src='./assets/img/movie/2130738676.mp4' type='video/mp4'>
+              <source src="./assets/img/movie/2130738676.mp4" type="video/mp4">
             </video>
           </div>
-          <figcaption class='per-char'>あなただけの特別な空間で、<br>ゆっくりお過ごしください。</figcaption>
+          <figcaption class="per-char">あなただけの特別な空間で、<br>ゆっくりお過ごしください。</figcaption>
         </figure>
       </div>
     </div>
-    <ul id="one-after-another-row" class='visual'>
-      <li class='frame'>
-        <img src='./assets/img/about_photo1.jpg' alt='店舗入口の看板と照明の画像'>
-      </li>
-      <li class='frame'>
-        <img src='./assets/img/about_photo2.jpg' alt='店内風景、バーバーチェアと鏡'>
-      </li>
-      <li class='frame'>
-        <img src='./assets/img/about_photo3.jpg' alt='販売用化粧品のディスプレイ'>
-      </li>
-      <li class='frame'>
-        <img src='./assets/img/about_photo4.jpg' alt='店内風景、バーバーチェア、鏡と洗髪椅子'>
-      </li>
+    <ul id="one-after-another-row" class="visual">
+      <li><img class="image" src="./assets/img/about_photo1.jpg" alt="店舗入口の看板と照明の画像"></li>
+      <li><img class="image" src="./assets/img/about_photo2.jpg" alt="店内風景、バーバーチェアと鏡の画像"></li>
+      <li><img class="image" src="./assets/img/about_photo3.jpg" alt="販売用化粧品のディスプレイの画像"></li>
+      <li><img class="image" src="./assets/img/about_photo4.jpg" alt="店内風景、バーバーチェア、鏡と洗髪椅子の画像"></li>
     </ul>
-    <div class='container'>
-      <div class='access fade-in'>
-        <div class='frame'>
-          <img src='./assets/img/access.jpg' alt='店先の立て看板と植木'>
-        </div>
+    <div class="container">
+      <div class="access fade-in">
+        <img class="image" src="./assets/img/access.jpg" alt="店先の立て看板と植木の画像">
         <dl>
-          <div class='dl-container'>
+          <div class="dl-container">
             <dt>住所</dt>
             <dd>〒602-0022<br>京都市上京区上立売東町34-1グリーンヒル上立売1F</dd>
           </div>
-          <div class='dl-container'>
+          <div class="dl-container">
             <dt>Tel</dt>
             <dd><a href="tel:075-406-1109">075-406-1109</a></dd>
           </div>
-          <div class='dl-container'>
+          <div class="dl-container">
             <dt>営業時間</dt>
             <dd>9:00〜19:00</dd>
           </div>
-          <div class='dl-container'>
+          <div class="dl-container">
             <dt>定休日</dt>
             <dd>月曜日・ときどき火曜日</dd>
           </div>
-          <div class='dl-container'>
+          <div class="dl-container">
             <dt>Instagram</dt>
             <dd><a href="mail:takahiro@kumihan.com">lamune.imadegawa</a></dd>
           </div>
         </dl>
       </div>
-      <div class='map'>
-        <div class='media-wrapper'>
+      <div class="map">
+        <div class="media-wrapper">
           <iframe
-            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3266.9956158425853!2d135.7562592152411!3d35.03183958035081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108731108ab25%3A0x8f83457ce4caec5a!2z44CSNjAyLTAwMjIg5Lqs6YO95bqc5Lqs6YO95biC5LiK5Lqs5Yy65LiK56uL5aOy6YCa5a6k55S65p2x5YWl5LiK56uL5aOy5p2x55S677yT77yU4oiS77yRIOOCsOODquODvOODs-ODkuODq-S4iueri-WjsiAxZg!5e0!3m2!1sja!2sjp!4v1685065260853!5m2!1sja!2sjp'
-            width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy'
-            referrerpolicy='no-referrer-when-downgrade'>
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3266.9956158425853!2d135.7562592152411!3d35.03183958035081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108731108ab25%3A0x8f83457ce4caec5a!2z44CSNjAyLTAwMjIg5Lqs6YO95bqc5Lqs6YO95biC5LiK5Lqs5Yy65LiK56uL5aOy6YCa5a6k55S65p2x5YWl5LiK56uL5aOy5p2x55S677yT77yU4oiS77yRIOOCsOODquODvOODs-ODkuODq-S4iueri-WjsiAxZg!5e0!3m2!1sja!2sjp!4v1685065260853!5m2!1sja!2sjp"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <section id='staff' class='staff'>
-    <div class='container'>
-      <h2 class='contents-title'>staff</h2>
-      <ul id='one-after-another'>
+  <section id="staff" class="staff">
+    <div class="container">
+      <h2 class="contents-title">staff</h2>
+      <ul id="one-after-another">
         <li>
-          <div class='frame'><img src='./assets/img/staff_nobukane2.jpg' alt='スタッフの延兼 敬スタイリスト'></div>
-          <p class='position'>stylist</p>
-          <div class='name'>
-            <p lang='jp'>延兼 敬<span lang='en'>Takashi <br>Nobukane</span></p>
-          </div>
+          <img class="image" src="./assets/img/staff_nobukane2.jpg" alt="スタッフの延兼 敬スタイリスの画像">
+          <p class="position">stylist</p>
+          <p class="name" lang="jp">延兼 敬<span lang="en">Takashi <br>Nobukane</span></p>
         </li>
         <li>
-          <div class='frame'><img src='./assets/img/staff_ishida.jpg' alt='スタッフの石田 由美子スタイリスト'></div>
-          <p class='position'>stylist</p>
-          <div class='name'>
-            <p lang='jp'>石田 由美子<span lang='en'>Yumiko <br>Ishida</span></p>
-          </div>
+          <img class="image" src="./assets/img/staff_ishida.jpg" alt="スタッフの石田 由美子スタイリストの画像">
+          <p class="position">stylist</p>
+          <p class="name" lang="jp">石田 由美子<span lang="en">Yumiko <br>Ishida</span></p>
         </li>
         <li>
-          <div class='frame'><img src='./assets/img/staff_kagawa.jpg' alt='スタッフの香川 玲菜スタイリスト'></div>
-          <p class='position'>stylist</p>
-          <div class='name'>
-            <p lang='jp'>香川 玲菜<span lang='en'>Rena <br>Kagawa</span></p>
-          </div>
+          <img class="image" src="./assets/img/staff_kagawa.jpg" alt="スタッフの香川 玲菜スタイリストの画像">
+          <p class="position">stylist</p>
+          <p class="name" lang="jp">香川 玲菜<span lang="en">Rena <br>Kagawa</span></p>
         </li>
       </ul>
     </div>
   </section>
 
-  <section id='menu' class='menu'>
-    <div class='container'>
-      <h2 class='contents-title'>menu</h2>
+  <section id="menu" class="menu">
+    <div class="container">
+      <h2 class="contents-title">menu</h2>
       <div class="frame media-wrapper">
-        <img src='./assets/img/menu.jpg' alt='店内ワゴンの上のスタイリストが腰につけているシザーケース'>
+        <img class="image" src="./assets/img/menu.jpg" alt="店内ワゴンの上のスタイリストが腰につけているシザーケースの画像">
       </div>
-      <dl class='fade-in'>
-        <div class='dl-container'>
+      <dl class="fade-in">
+        <div class="dl-container">
           <dt>カット</dt>
           <dd>¥4,100〜</dd>
         </div>
-        <div class='dl-container'>
+        <div class="dl-container">
           <dt>カラー</dt>
           <dd>¥5,100〜</dd>
         </div>
-        <div class='dl-container'>
+        <div class="dl-container">
           <dt>デザインカラー</dt>
           <dd>¥10,100〜</dd>
         </div>
-        <div class='dl-container'>
+        <div class="dl-container">
           <dt>パーマ</dt>
           <dd>¥6,100〜</dd>
         </div>
-        <div class='dl-container'>
+        <div class="dl-container">
           <dt>トリートメント</dt>
           <dd>¥3,100〜</dd>
         </div>
@@ -241,118 +228,121 @@
     </div>
   </section>
 
-  <section id='style' class='style'>
-    <div class='container'>
-      <h2 class='contents-title'>style</h2>
-      <ul id='style-sample' class='visual fade-in'>
-        <li class='frame'><img src='./assets/img/model/0001-A9D81E4E-CB75-465D-9542-D68BD99E6DAE-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0002-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0003-IMG_1664-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0004-4C0DD3D5-AD7D-43FC-8F72-5EC641152368-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0005-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0006-2F051FEA-EC4F-4367-BFA6-A6E08869B182-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0007-22975CBB-9022-4218-9F87-FBB63AC87C85-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0008-77536D81-202B-44CB-8CD3-5DF9D98FC670-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0009-35E77033-B5B6-49FF-95CA-E04AEFD43FF5-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0010-849C219C-8004-4B76-9F7C-2CEFA5945FE9-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0011-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0012-96311AB5-7585-41B8-9C35-D537F4889E49-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0101-A9D81E4E-CB75-465D-9542-D68BD99E6DAE-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0102-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0103-IMG_1664-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0104-4C0DD3D5-AD7D-43FC-8F72-5EC641152368-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0105-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0106-2F051FEA-EC4F-4367-BFA6-A6E08869B182-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0107-22975CBB-9022-4218-9F87-FBB63AC87C85-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0108-77536D81-202B-44CB-8CD3-5DF9D98FC670-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0109-35E77033-B5B6-49FF-95CA-E04AEFD43FF5-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0110-849C219C-8004-4B76-9F7C-2CEFA5945FE9-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0111-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/0112-96311AB5-7585-41B8-9C35-D537F4889E49-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1101-A9D81E4E-CB75-465D-9542-D68BD99E6DAE-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1102-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1103-IMG_1664-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1104-4C0DD3D5-AD7D-43FC-8F72-5EC641152368-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1105-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1106-2F051FEA-EC4F-4367-BFA6-A6E08869B182-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1107-22975CBB-9022-4218-9F87-FBB63AC87C85-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1108-77536D81-202B-44CB-8CD3-5DF9D98FC670-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1109-35E77033-B5B6-49FF-95CA-E04AEFD43FF5-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1110-849C219C-8004-4B76-9F7C-2CEFA5945FE9-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1111-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6-300x380.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-        <li class='frame'><img src='./assets/img/model/1112-96311AB5-7585-41B8-9C35-D537F4889E49-300x380.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
+  <section id="style" class="style">
+    <div class="container">
+      <h2 class="contents-title">style</h2>
+      <ul id="style-sample" class="visual fade-in">
+        <li><img class="image" src="./assets/img/model/0001-A9D81E4E-CB75-465D-9542-D68BD99E6DAE-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0002-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0003-IMG_1664-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0004-4C0DD3D5-AD7D-43FC-8F72-5EC641152368-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0005-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0006-2F051FEA-EC4F-4367-BFA6-A6E08869B182-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0007-22975CBB-9022-4218-9F87-FBB63AC87C85-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0008-77536D81-202B-44CB-8CD3-5DF9D98FC670-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0009-35E77033-B5B6-49FF-95CA-E04AEFD43FF5-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0010-849C219C-8004-4B76-9F7C-2CEFA5945FE9-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0011-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0012-96311AB5-7585-41B8-9C35-D537F4889E49-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0101-A9D81E4E-CB75-465D-9542-D68BD99E6DAE-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0102-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0103-IMG_1664-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0104-4C0DD3D5-AD7D-43FC-8F72-5EC641152368-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0105-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0106-2F051FEA-EC4F-4367-BFA6-A6E08869B182-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0107-22975CBB-9022-4218-9F87-FBB63AC87C85-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0108-77536D81-202B-44CB-8CD3-5DF9D98FC670-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0109-35E77033-B5B6-49FF-95CA-E04AEFD43FF5-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0110-849C219C-8004-4B76-9F7C-2CEFA5945FE9-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0111-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/0112-96311AB5-7585-41B8-9C35-D537F4889E49-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1101-A9D81E4E-CB75-465D-9542-D68BD99E6DAE-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1102-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1103-IMG_1664-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1104-4C0DD3D5-AD7D-43FC-8F72-5EC641152368-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1105-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1106-2F051FEA-EC4F-4367-BFA6-A6E08869B182-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1107-22975CBB-9022-4218-9F87-FBB63AC87C85-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1108-77536D81-202B-44CB-8CD3-5DF9D98FC670-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1109-35E77033-B5B6-49FF-95CA-E04AEFD43FF5-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1110-849C219C-8004-4B76-9F7C-2CEFA5945FE9-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1111-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6-300x380.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+        <li><img class="image" src="./assets/img/model/1112-96311AB5-7585-41B8-9C35-D537F4889E49-300x380.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
       </ul>
-      <div class='view-more preview-model-btn'>
+      <div class="view-more preview-model-btn">
         <div class="wrapper">VIEW MORE</div>
       </div>
       <div id="styling-view-modal" class="styling-view-modal">
-        <button></button>
+        <button id="closed-button"></button>
         <div class="swiper">
           <ul class="swiper-wrapper">
-            <li class='swiper-slide'><img src='./assets/img/model/0001-A9D81E4E-CB75-465D-9542-D68BD99E6DAE.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0002-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0003-IMG_1664.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0004-4C0DD3D5-AD7D-43FC-8F72-5EC641152368.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0005-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0006-2F051FEA-EC4F-4367-BFA6-A6E08869B182.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0007-22975CBB-9022-4218-9F87-FBB63AC87C85.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0008-77536D81-202B-44CB-8CD3-5DF9D98FC670.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0009-35E77033-B5B6-49FF-95CA-E04AEFD43FF5.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0010-849C219C-8004-4B76-9F7C-2CEFA5945FE9.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0011-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0012-96311AB5-7585-41B8-9C35-D537F4889E49.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0101-A9D81E4E-CB75-465D-9542-D68BD99E6DAE.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0102-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0103-IMG_1664.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0104-4C0DD3D5-AD7D-43FC-8F72-5EC641152368.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0105-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0106-2F051FEA-EC4F-4367-BFA6-A6E08869B182.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0107-22975CBB-9022-4218-9F87-FBB63AC87C85.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0108-77536D81-202B-44CB-8CD3-5DF9D98FC670.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0109-35E77033-B5B6-49FF-95CA-E04AEFD43FF5.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0110-849C219C-8004-4B76-9F7C-2CEFA5945FE9.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0111-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/0112-96311AB5-7585-41B8-9C35-D537F4889E49.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1101-A9D81E4E-CB75-465D-9542-D68BD99E6DAE.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1102-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1103-IMG_1664.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1104-4C0DD3D5-AD7D-43FC-8F72-5EC641152368.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1105-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1106-2F051FEA-EC4F-4367-BFA6-A6E08869B182.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1107-22975CBB-9022-4218-9F87-FBB63AC87C85.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1108-77536D81-202B-44CB-8CD3-5DF9D98FC670.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1109-35E77033-B5B6-49FF-95CA-E04AEFD43FF5.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1110-849C219C-8004-4B76-9F7C-2CEFA5945FE9.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1111-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6.jpeg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
-            <li class='swiper-slide'><img src='./assets/img/model/1112-96311AB5-7585-41B8-9C35-D537F4889E49.jpg' alt='これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真'></li>
+            <!-- li に class="swiper-slide" を入れないと一画面一枚の写真とならない。 -->
+            <!-- ちなみに、本家のサンプルでは、<div class="swiper-wrapper"></div>で包摂された子要素にはこのクラスがつけれている。 -->
+            <!-- img に class="image" を入れないと写真がはみ出る。 -->
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0001-A9D81E4E-CB75-465D-9542-D68BD99E6DAE.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0002-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0003-IMG_1664.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0004-4C0DD3D5-AD7D-43FC-8F72-5EC641152368.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0005-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0006-2F051FEA-EC4F-4367-BFA6-A6E08869B182.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0007-22975CBB-9022-4218-9F87-FBB63AC87C85.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0008-77536D81-202B-44CB-8CD3-5DF9D98FC670.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0009-35E77033-B5B6-49FF-95CA-E04AEFD43FF5.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0010-849C219C-8004-4B76-9F7C-2CEFA5945FE9.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0011-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0012-96311AB5-7585-41B8-9C35-D537F4889E49.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0101-A9D81E4E-CB75-465D-9542-D68BD99E6DAE.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0102-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0103-IMG_1664.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0104-4C0DD3D5-AD7D-43FC-8F72-5EC641152368.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0105-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0106-2F051FEA-EC4F-4367-BFA6-A6E08869B182.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0107-22975CBB-9022-4218-9F87-FBB63AC87C85.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0108-77536D81-202B-44CB-8CD3-5DF9D98FC670.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0109-35E77033-B5B6-49FF-95CA-E04AEFD43FF5.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0110-849C219C-8004-4B76-9F7C-2CEFA5945FE9.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0111-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/0112-96311AB5-7585-41B8-9C35-D537F4889E49.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1101-A9D81E4E-CB75-465D-9542-D68BD99E6DAE.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1102-E4C4992C-D8E0-4AA3-AE6B-B35BF64871A9.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1103-IMG_1664.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1104-4C0DD3D5-AD7D-43FC-8F72-5EC641152368.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1105-6DF84AAA-2EA3-4945-B8CB-7F1212D3ADDA.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1106-2F051FEA-EC4F-4367-BFA6-A6E08869B182.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1107-22975CBB-9022-4218-9F87-FBB63AC87C85.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1108-77536D81-202B-44CB-8CD3-5DF9D98FC670.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1109-35E77033-B5B6-49FF-95CA-E04AEFD43FF5.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1110-849C219C-8004-4B76-9F7C-2CEFA5945FE9.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1111-314C7165-5CA9-4BFF-AA4A-A16F0379E5D6.jpeg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
+            <li class="swiper-slide"><img class="image" src="./assets/img/model/1112-96311AB5-7585-41B8-9C35-D537F4889E49.jpg" alt="これまで手がけたスタイリングの見本としてお店で撮影したモデルの写真"></li>
           </ul>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
   </section>
 
-  <section id='recruit' class='recruit'>
-    <div class='container'>
-      <h2 class='contents-title'>recruit</h2>
-      <div class='join-our-team'>
+  <section id="recruit" class="recruit">
+    <div class="container">
+      <h2 class="contents-title">recruit</h2>
+      <div class="join-our-team">
         <figure>
           <div class="media-wrapper">
             <video playsinline autoplay loop muted>
-              <source src='./assets/img/movie/2188818419.mp4' type='video/mp4'>
+              <source src="./assets/img/movie/2188818419.mp4" type="video/mp4">
             </video>
           </div>
           <figcaption class="fade-in">
             ラムネで一緒に働ける方、<br>募集中です。
             <dl class="fade-in">
-              <div class='dl-container'>
+              <div class="dl-container">
                 <dt>Tel.</dt>
-                <dd><a href='tel:075-406-1109'>075-406-1109</a></dd>  
+                <dd><a href="tel:075-406-1109">075-406-1109</a></dd>  
               </div>          
-              <div class='dl-container'>
+              <div class="dl-container">
                 <dt>Mail.</dt>
-                <dd><a href='mail:info@lamune-kyoto.com'>info@lamune-kyoto.com</a></dd>            
+                <dd><a href="mail:info@lamune-kyoto.com">info@lamune-kyoto.com</a></dd>            
               </div>
             </dl>
           </figcaption> 
@@ -363,9 +353,9 @@
 </main>
 
 <footer>
-  <figure class='visual'>
+  <figure class="visual">
     <video playsinline autoplay loop muted>
-      <source src='./assets/img/movie/2297636521.mp4' type='video/mp4'>
+      <source src="./assets/img/movie/2297636521.mp4" type="video/mp4">
     </video>
     <figcaption>Copyrights © lamune. All Rights Reserved.</figcaption>
   </figure>

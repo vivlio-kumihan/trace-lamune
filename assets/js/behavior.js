@@ -1,13 +1,13 @@
-////////////
-// ローディング・アニメーション
-function loaded() {
-  const loading = document.getElementById("loading")
-  loading.classList.remove("keep")
-}
-// ウィンドウを読み込んで2秒後には次に遷移する。
-window.addEventListener('load', () => {
-  setTimeout(loaded, 1500)
-})
+// ////////////
+// // ローディング・アニメーション
+// function loaded() {
+//   const loading = document.getElementById("loading")
+//   loading.classList.remove("keep")
+// }
+// // ウィンドウを読み込んで2秒後には次に遷移する。
+// window.addEventListener('load', () => {
+//   setTimeout(loaded, 1500)
+// })
 
 // // behavior page top
 const toSectionLinkBtn = document.getElementById("to-section-link-btn")
@@ -192,6 +192,99 @@ viewMore.forEach(elem => {
 })
 
 
+// gsap.to('.vm::before', {
+//   scaleX: 1,
+//   duration: 0.5,
+//   ease: 'power2.out'
+// });
+
+// const vm = document.querySelectorAll(".vm")
+// vm.forEach(elem => {
+//   elem.addEventListener('mouseenter', () => {
+//     gsap.fromTo(elem, .3, {
+//       width: 'auto',
+//       opacity: 1
+//     }, {
+//       width: 0,
+//       opacity: 1
+//     })
+//   })
+//   elem.addEventListener('mouseleave', () => {
+//     gsap.fromTo(elem, .3, {
+//       // width: 0,
+//       // opacity: 1
+//     }, {
+//       width: 'auto',
+//       opacity: 1
+//     })
+//   })
+// })
+
+
+// vm.forEach(elem => {
+//   elem.addEventListener('mouseleave', () => {
+//     console.log('leave!')
+//     elem.classList.remove('hover-mark')
+
+//   })
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const vm = document.querySelectorAll(".vm")
+// vm.forEach(elem => {
+//   elem.addEventListener('mouseenter', () => {
+//     gsap.to(elem, .3, {
+
+//     })
+//   })
+//   elem.addEventListener('mouseleave', () => {
+//     gsap.to(elem, .3, {
+
+//     })
+//   })
+// })
+    
+    // overGreen.forEach(el => {
+    //   gsap.fromTo(el, .3, {
+    //     // left, rightどちらも同じ動き。なぜ？？？？？？？
+    //     transformOrigin: 'top left',
+    //     width: '0%',
+    //     opacity: 1
+    //   }, {
+    //     width: '100%',
+    //     opacity: 1,
+    //   })
+  // elem.addEventListener('mouseleave', () => {
+  //   overGreen.forEach(el => {
+  //     gsap.fromTo(el, .3, {
+  //       // left, rightどちらも同じ動き。なぜ？？？？？？？？？
+  //       transformOrigin: 'top left'
+  //     }, { 
+  //       width: 0,
+  //       opacity: 1 
+  //     })
+  //   })
+  // })
+
+
 ////////////
 // .fade-in　徐々に現れる
 const stGadeIn = document.querySelectorAll(".fade-in")
@@ -247,64 +340,89 @@ preCharAll.forEach(elem => {
 
 ////////////
 // スタイル・モデルの写真リストの表示管理
-
-const models = Array.from(document.querySelectorAll("#style ul > .frame"))
+const models = Array.from(document.getElementById('style-sample').children)
 const previewModelBtn = document.querySelector(".preview-model-btn")
 const numberOfPeople = models.length;
 const groupSize = Math.ceil(numberOfPeople / 12);
 const divideGroup = [];
 
-Array.from({ length: groupSize }).forEach((_, i) => {
-  const start = i * 12;
+Array.from({ length: groupSize }).forEach((_, idx) => {
+  const start = idx * 12;
   const end = Math.min(start + 12, numberOfPeople);
   divideGroup.push(models.slice(start, end));
-});
+})
 
 // 最初のグループを表示させておく。
+// GSAPを使って初期の画面の表示をset関数を使ってやってみる。
+// autoAlpha: 1 → opacity: 1 と visibility: visible; にしてくれる
+// autoAlpha: 0だと逆
 const firstGroup = divideGroup.shift()
-firstGroup.forEach(elem => {
-  elem.style.display = 'block'
+gsap.set(firstGroup, {
+  display: 'block',
+  opacity: 1
 })
 
 // クリックしたら次のグループを表示させる。
 previewModelBtn.addEventListener('click', () => {
   const nextGroup = divideGroup.shift()
   nextGroup.forEach(elem => {
-    elem.classList.add('models-fade-in')
+    elem.classList.add('models-block-defending')
+  })
+  gsap.to(nextGroup, .5, {
+    opacity: 1,
+    stagger: .07
   })
 })
 
 // styleのスタイリングの見本
 const stylingViewModal = document.getElementById('styling-view-modal')
-const closedBtn = stylingViewModal.firstElementChild
+const closedBtn = document.getElementById('closed-button')
+
+// swaiperのインスタンスを確保する。
+
+const modaleSwiper =  new Swiper('.swiper', {
+  // 各属性
+  // direction: 'horizon',
+  loop: true,
+  // 何番目のスライドから始めるかを指定するオプション
+  // initialSlide: idx,
+  // ページネーション
+  // pagination: {
+  //   el: '.swiper-pagination',
+  // },
+  // ナビゲーションの矢印
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  // スクロールバー
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
+  // コールバック関数
+  // スライド動作をきっかけに自分の設定した関数を動かすことができる
+  on: {
+    // スライドが変更された時に何か処理する
+    init: () => {
+      console.log('onInit')
+    },
+    // スライドが変更された時に何か処理する
+    slideChange: () => {
+      // ここに適宜必要な処理を書いていく。
+      // console.log('change')
+    }
+  }
+})
 
 models.forEach((elem, idx) => {
   elem.addEventListener('click', () => {
-    // stylingViewModal.style.display = 'block'
+    // ここがクリックした写真をモーダルで表示させる心臓部。たったの一行。
+    // swiperのインスタンスにslideTo()関数を送信して、
+    // インデックスn番目のスライドを呼び出している。
+    // 必要であれば、関数の引数の最後にコールバック関数を入れる。
+    modaleSwiper.slideTo(idx, 0)
+
     stylingViewModal.classList.add('style-fade-in')
-    new Swiper('.swiper', {
-      // Optional parameters
-      // direction: 'horizon',
-      loop: true,
-      // 何番目のスライドから始めるかを指定するオプション
-      initialSlide: idx,
-    
-      // If we need pagination
-      // pagination: {
-      //   el: '.swiper-pagination',
-      // },
-    
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    
-      // And if we need scrollbar
-      // scrollbar: {
-      //   el: '.swiper-scrollbar',
-      // },
-    })
     closedBtn.addEventListener('click', () => {
       stylingViewModal.classList.remove('style-fade-in')
     })
