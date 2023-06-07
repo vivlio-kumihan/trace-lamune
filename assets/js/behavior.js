@@ -159,6 +159,52 @@ curtainsAll.forEach(elem => {
 })
 
 
+
+
+// document.querySelectorAll('.media-wrapper').forEach(elem => {
+//   elem.insertAdjacentHTML('afterbegin', '<div class="curtains"></div>')
+// })
+
+const viewMoreFrame = document.getElementById('view-more-frame')
+viewMoreFrame.insertAdjacentHTML('beforeend', '<div id="curtains-word" class="curtains-word">view more</div>')
+const curtainsWord = document.getElementById('curtains-word')
+
+viewMoreFrame.addEventListener('mouseenter', function() {
+  gsap.set(curtainsWord, {
+    width: 0
+  })
+  gsap.to(curtainsWord, .3, {
+    width: 'auto'
+  })
+})
+viewMoreFrame.addEventListener('mouseleave', function() {
+  gsap.to(curtainsWord, .3, {
+    width: 0
+  })
+})
+
+
+
+// viewMoreFrame.addEventListener('mouseleave', function() {
+//   gsap.to(box, 1, {
+//     width: 'auto'
+//   })
+// })
+// box.addEventListener('mouseleave', function() {
+//   gsap.to(this, 1, {
+//     width: 'auto'
+//   })
+// })
+
+
+// document.getElementById('box').addEventListener('mouseleave', function() {
+//   console.log(this)
+//   gsap.to(this, .3, {
+//     width: 0,
+//     // opacity: 0
+//   })
+// })
+
 ////////////
 //  view-moreボタン
 const viewMore = document.querySelectorAll(".view-more")
