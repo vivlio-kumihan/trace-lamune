@@ -6,7 +6,7 @@ viewMoreFrame.addEventListener('mouseenter', function () {
   gsap.set(curtainsWord, {
     // 緑の文字 左 → 右用
     // width: 0
-
+    
     // 緑の文字 右 → 左用
     width: 'auto'
   })
@@ -20,6 +20,7 @@ viewMoreFrame.addEventListener('mouseenter', function () {
 })
 viewMoreFrame.addEventListener('mouseleave', function () {
   gsap.to(curtainsWord, .3, {
+    
     // 緑の文字 左 → 右用
     // width: 0
 
