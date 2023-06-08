@@ -395,6 +395,50 @@ th {
 }
 
 /* font-family: "Lato", sans-serif; */
+footer {
+  position: relative;
+  margin-top: 200px;
+  padding-right: 80px;
+  height: 50vh;
+  overflow: hidden;
+}
+footer video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+footer figcaption {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+@media screen and (max-width: 700px) {
+  footer {
+    margin-top: 115px;
+    padding: 0;
+    height: 35vh;
+  }
+  footer .visual {
+    height: 100%;
+  }
+  footer .visual video {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  footer .visual figcaption {
+    bottom: 30px;
+    white-space: nowrap;
+  }
+}
 /* //////////////////// 全体 */
 html {
   /* 本文: 14px */
@@ -834,7 +878,7 @@ main section .container .contents-title::before {
 }
 .about .container .salon-vibe figure .media-wrapper {
   position: relative;
-  flex: 1.55;
+  flex: 1.8;
 }
 .about .container .salon-vibe figure .media-wrapper .curtains {
   position: absolute;
@@ -844,6 +888,7 @@ main section .container .contents-title::before {
   height: 100%;
   content: "";
   background-color: #fff;
+  z-index: get_index(curtains);
 }
 .about .container .salon-vibe figure .media-wrapper video {
   width: 100%;
@@ -854,7 +899,8 @@ main section .container .contents-title::before {
 }
 .about .container .salon-vibe figure figcaption {
   flex: 1;
-  line-height: 2.2;
+  font-size: 16px;
+  line-height: 2.5;
   padding: 50px;
 }
 .about .container .access {
@@ -895,16 +941,16 @@ main section .container .contents-title::before {
     color: #4BBE92;
   }
 }
-.about .container .media-wrapper {
+.about .container .media-wrapper.map {
   position: relative;
   width: 100%;
-  height: 53vh;
+  height: 38vh;
   margin-top: 80px;
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
 }
-.about .container .media-wrapper .curtains {
+.about .container .media-wrapper.map .curtains {
   position: absolute;
   top: 0;
   left: 0;
@@ -912,8 +958,9 @@ main section .container .contents-title::before {
   height: 100%;
   content: "";
   background-color: #fff;
+  z-index: get_index(curtains);
 }
-.about .container .media-wrapper iframe {
+.about .container .media-wrapper.map iframe {
   width: 100%;
   height: 100%;
 }
@@ -989,6 +1036,7 @@ main section .container .contents-title::before {
   height: 100%;
   content: "";
   background-color: #fff;
+  z-index: get_index(curtains);
 }
 .menu .container dl {
   display: grid;
@@ -1116,6 +1164,7 @@ main section .container .contents-title::before {
   height: 100%;
   content: "";
   background-color: #fff;
+  z-index: get_index(curtains);
 }
 .recruit .container .join-our-team figure .media-wrapper video {
   width: 100%;
@@ -1297,9 +1346,16 @@ main section .container .contents-title::before {
   }
   .about .container .access {
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     margin-top: 60px;
   }
+  .about .container .access .image {
+    width: 100%;
+    height: 100%;
+  }
   .about .container .access dl {
+    width: 100%;
     margin-top: 30px;
     margin-left: 0;
   }
@@ -1425,28 +1481,7 @@ main section .container .contents-title::before {
   .recruit .container .join-our-team figure figcaption dl div dt, .recruit .container .join-our-team figure figcaption dl div dd {
     font-size: 15px;
   }
-}
-footer {
-  position: relative;
-  margin-top: 200px;
-  padding-right: 80px;
-  height: 50vh;
-  overflow: hidden;
-}
-footer video {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-footer figcaption {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-size: 12px;
+}/*# sourceMappingURL=style.css.map */ 12px;
   color: #fff;
   letter-spacing: 0;
 }
@@ -1455,7 +1490,7 @@ footer figcaption {
   footer {
     margin-top: 115px;
     padding: 0;
-    height: 35vh;
+    height: 40vh;
   }
   footer .visual {
     height: 100%;

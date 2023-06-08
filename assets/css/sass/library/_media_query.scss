@@ -1,0 +1,19 @@
+@use '../component/size' as size;
+
+@mixin media-query-pc() {
+  @media screen and (min-width: size.$break-point-pc) {
+    @content
+  }
+}
+
+@mixin media-query-tb() {
+  @media screen and (min-width: size.$break-point-tb-lo) and (max-width: size.$break-point-tb-hi) {
+    @content
+  }
+}
+
+@mixin media-query-sp() {
+  @media screen and (max-width: size.$break-point-sp) {
+    @content
+  }
+}

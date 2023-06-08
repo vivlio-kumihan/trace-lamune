@@ -1,0 +1,44 @@
+@use "../component/color" as col;
+
+@mixin caption-with-visual {
+  writing-mode: vertical-rl;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+@mixin dl-container {
+  display: flex;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dotted col.$color-gray;
+  dt, dd {
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  dt {
+    min-width: 85px;
+  }
+}
+
+@mixin hoverAnimation($transition-duraiton: .3s) {
+  transition: $transition-duraiton;
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin scroll-trigger-curtains {
+  .curtains {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: #fff;
+    z-index: get_index(curtains);
+  }
+}

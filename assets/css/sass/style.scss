@@ -1,92 +1,11 @@
 @charset "UTF-8";
 
+@use "forwards" as fw;
 @use "destyle";
+@use "component/font";
+@use "module/header";
+@use "module/footer";
 
-/* Noto+Sans+JP gothic */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700;900&display=swap");
-/* font-family: "Noto Sans JP", sans-serif; */
-/* Roboto */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
-/* font-family: "Roboto", sans-serif; */
-/* Roboto Condensed */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap");
-// font-family: "Roboto Condensed", sans-serif;
-/* Roboto Condensed Italic */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap");
-// font-family: "Roboto Condensed", sans-serif;
-/* Lato */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap");
-/* font-family: "Lato", sans-serif; */
-
-@mixin caption-with-visual {
-  writing-mode: vertical-rl;
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
-@mixin dl-container {
-  display: flex;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px dotted $color-gray;
-  dt, dd {
-    font-weight: 300;
-    line-height: 1.7;
-  }
-  dt {
-    min-width: 85px;
-  }
-}
-
-@mixin hoverAnimation($transition-duraiton: .3s) {
-  transition: $transition-duraiton;
-  @media (hover: hover) {
-    &:hover {
-      @content;
-    }
-  }
-}
-
-@mixin scroll-trigger-curtains {
-  .curtains {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background-color: #fff;
-    z-index: get_index(curtains);
-  }
-}
-
-// colors
-$color-black: #3C3835;
-$color-gray: #DEDEDE;
-$color-light-gray: #F2F2F2;
-$color-green: #4BBE92;
-$color-bule: blue;
-
-// 紐付けたい要素を変数名にして配列に格納する。
-// about-salon-vibe-last+1
-// contents-title+3
-// header
-// sp-header+10
-// styling-view-modal+11
-// loading+11
-$index-map: 
-  about-salon-vibe-last,
-  contents-title,
-  header,
-  sp-header,
-  styling-view-modal,
-  loading;
-// z-index属性へ代入する関数を定義する。
-// 配列と値の名称を引数とする。
-@function get_index($name) {
-  @return index($index-map, $name)
-}
 
 /* //////////////////// 全体 */
 html {
@@ -97,7 +16,7 @@ html {
 
 body {
   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: $color-black;
+  color: fw.$color-black;
 }
 
 // :targetとして1行で書く
@@ -149,12 +68,12 @@ figcaption {
     white-space: nowrap;
   
     // 緑の文字 左 → 右用
-    color: $color-black;
-    border-bottom: 3px solid $color-black;
+    color: fw.$color-black;
+    border-bottom: 3px solid fw.$color-black;
   
     // // 緑の文字 右 → 左用
-    // color: $color-green;
-    // border-bottom: 3px solid $color-green;
+    // color: fw.$color-green;
+    // border-bottom: 3px solid fw.$color-green;
     &:hover {
       cursor: pointer;
     }
@@ -165,15 +84,15 @@ figcaption {
       padding-bottom: 10px;
       color: transparent;
       background-clip: text;
-      text-shadow: 0 0 .25px $color-green;
+      text-shadow: 0 0 .25px fw.$color-green;
   
       // 緑の文字 左 → 右用
-      background-color: $color-green;
-      border-bottom: 3px solid $color-green;
+      background-color: fw.$color-green;
+      border-bottom: 3px solid fw.$color-green;
   
       // // 緑の文字 右 → 左用
-      // background-color: $color-black;
-      // border-bottom: 3px solid $color-black;
+      // background-color: fw.$color-black;
+      // border-bottom: 3px solid fw.$color-black;
 
       overflow: hidden;
       visibility: hidden;
@@ -185,7 +104,6 @@ figcaption {
       padding-bottom: 13px;
       color: transparent;
       background-color: #fff;
-      z-index: get_index(curtains-view-more);
     }
   }
 }
@@ -200,7 +118,7 @@ figcaption {
   transition: 1.5s;
   visibility: hidden;
   opacity: 0;
-  z-index: get_index(loading);
+  z-index: fw.get_index(loading);
   &.keep {
     visibility: visible;
     opacity: 1;
@@ -219,7 +137,7 @@ figcaption {
 header {
   position: relative;
   background-color: blue;
-  z-index: get_index(header);
+  z-index: fw.get_index(header);
   .image.logo {
     position: absolute;
     top: 30px;
@@ -236,7 +154,6 @@ header {
     right: 0;
     width: 80px;
     height: 100vh;
-    z-index: get_index(main-nav);
     .to-section-link-btn {
       display: block;
     }
@@ -252,8 +169,8 @@ header {
         line-height: 1;
         text-transform: uppercase;
         a {
-          @include hoverAnimation() {
-            color: $color-green;
+          @include fw.hoverAnimation() {
+            color: fw.$color-green;
           }
         }
       }
@@ -265,7 +182,7 @@ header {
           &:first-of-type {
             position: relative;
             padding: 0 5px 15px;
-            border-bottom: 1px solid $color-black;
+            border-bottom: 1px solid fw.$color-black;
             &::before {
               position: absolute;
               top: -28px;
@@ -280,8 +197,8 @@ header {
           &:last-of-type {
             .fa-brands {
               font-size: 28px;
-              @include hoverAnimation() {
-                color: $color-black;
+              @include fw.hoverAnimation() {
+                color: fw.$color-black;
               }
             }
           }
@@ -299,8 +216,8 @@ header {
     width: 100%;
     height: 60px;
     background-color: #fff;
-    border-bottom: 1px solid $color-light-gray;
-    z-index: get_index(sp-header);
+    border-bottom: 1px solid fw.$color-light-gray;
+    z-index: fw.get_index(sp-header);
     .previous-container {
       display: flex;
       align-items: center;
@@ -396,7 +313,7 @@ header {
               font-family: "Lato", sans-serif;
               font-weight: 300;
               font-size: 24px;
-              border-bottom: 1px solid $color-light-gray;
+              border-bottom: 1px solid fw.$color-light-gray;
               a {
                 display: block;
               }
@@ -420,7 +337,7 @@ header {
             li:last-of-type {
               margin-left: 15px;
               padding-left: 15px;
-              border-left: 1px solid $color-black;
+              border-left: 1px solid fw.$color-black;
             }
           }
         }
@@ -449,8 +366,8 @@ main {
         letter-spacing: .1em;
         text-transform: uppercase;
         counter-increment: section-title-num;
-        z-index: get_index(contents-title);
-        border-top: 1px solid $color-black;
+        z-index: fw.get_index(contents-title);
+        border-top: 1px solid fw.$color-black;
         &::before {
           position: absolute;
           top: -45px;
@@ -507,14 +424,14 @@ main {
           display: block;
           @media (hover: hover) {
             &:hover {
-              color: $color-green
+              color: fw.$color-green
             }
           }
           .image {
             aspect-ratio: 1
           }
           .blog-date {
-            @include caption-with-visual;
+            @include fw.caption-with-visual;
             position: absolute;
             top: 0;
             right: -20px;
@@ -546,11 +463,11 @@ main {
           margin-top: 120px;
           figcaption {
             text-align: right;
-            z-index: get_index(about-salon-vibe-last);
+            z-index: fw.get_index(about-salon-vibe-last);
           }
         }
         .media-wrapper {
-          @include scroll-trigger-curtains;
+          @include fw.scroll-trigger-curtains;
           position: relative;
           flex: 1.8;
           video {
@@ -581,20 +498,20 @@ main {
         width: 55%;
         margin-left: 50px;
         div {
-          @include dl-container;
+          @include fw.dl-container;
           &:last-of-type {
             border-bottom: none;
           }
         }
         a {
-          @include hoverAnimation() {
-            color: $color-green;
+          @include fw.hoverAnimation() {
+            color: fw.$color-green;
           }
         }
       }
     }
     .media-wrapper.map {
-      @include scroll-trigger-curtains;
+      @include fw.scroll-trigger-curtains;
       position: relative;
       width: 100%;
       height: 38vh;
@@ -630,7 +547,7 @@ main {
           height: 85%
         }
         .position {
-          @include caption-with-visual;
+          @include fw.caption-with-visual;
           position: absolute;
           top: 0;
           right: -25px;
@@ -666,7 +583,7 @@ main {
   .container {
     position: relative;
     .media-wrapper {
-      @include scroll-trigger-curtains;
+      @include fw.scroll-trigger-curtains;
       position: relative;
     }
     dl {
@@ -675,7 +592,7 @@ main {
       column-gap: 60px;
       margin-top: 50px;
       div {
-        @include dl-container;
+        @include fw.dl-container;
         dt {
           width: 35%;
         }
@@ -723,7 +640,7 @@ main {
   transition: .5s;
   visibility: hidden;
   opacity: 0;
-  z-index: get_index(styling-view-modal);
+  z-index: fw.get_index(styling-view-modal);
   &.style-fade-in {
     visibility: visible;
     opacity: 1;
@@ -777,7 +694,7 @@ main {
         display: flex;
         align-items: center;
         .media-wrapper {
-          @include scroll-trigger-curtains;
+          @include fw.scroll-trigger-curtains;
           width: 50%;
           aspect-ratio: 4/3;
           video {
@@ -793,7 +710,7 @@ main {
           dl {
             margin-top: 45px;
             div {
-              @include dl-container;
+              @include fw.dl-container;
               margin-bottom: 0px;
               padding-bottom: 0;
               border-bottom: none;
@@ -811,8 +728,8 @@ main {
                 min-width: 60px;
               }
               a {
-                @include hoverAnimation() {
-                  color: $color-green;
+                @include fw.hoverAnimation() {
+                  color: fw.$color-green;
                 }
               }
             }
@@ -833,7 +750,7 @@ main {
     margin-top: 40px;
     .view-more-anchor {
       font-size: 13px;
-      border-bottom: 2px solid $color-black;
+      border-bottom: 2px solid fw.$color-black;
     }
   }
 
@@ -851,7 +768,7 @@ main {
           line-height: 1;
           writing-mode: horizontal-tb;
           border: none;
-          border-left: 1px solid $color-black;
+          border-left: 1px solid fw.$color-black;
           &:before {
             top: 0;
             left: -45px;
@@ -863,7 +780,7 @@ main {
             width: 0;
             height: 18px;
             border-top: none;
-            border-left: 1px solid $color-black;
+            border-left: 1px solid fw.$color-black;
           }
         }
       }
@@ -1110,47 +1027,4 @@ main {
       }
     }
   }
-}
-
-footer {
-  position: relative;
-  margin-top: 200px;
-  padding-right: 80px;
-  height: 50vh;
-  overflow: hidden;
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-  }
-  figcaption {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    color: #fff;
-    letter-spacing: 0;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  footer {
-    margin-top: 115px;
-    padding: 0;
-    height: 35vh;
-    .visual {
-      height: 100%;
-      video {
-        height: 100%;
-        object-fit: cover;
-      }
-      figcaption {
-        bottom: 30px;
-        white-space: nowrap;
-      }
-    }
-  } 
 }

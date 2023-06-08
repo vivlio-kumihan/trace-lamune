@@ -1,0 +1,20 @@
+// 紐付けたい要素を変数名にして配列に格納する。
+// about-salon-vibe-last+1
+// contents-title+3
+// header
+// sp-header+10
+// styling-view-modal+11
+// loading+11
+$index-map: 
+  about-salon-vibe-last,
+  contents-title,
+  header,
+  sp-header,
+  styling-view-modal,
+  loading;
+  
+// z-index属性へ代入する関数を定義する。
+// 配列と値の名称を引数とする。
+@function get_index($name) {
+  @return index($index-map, $name)
+}
