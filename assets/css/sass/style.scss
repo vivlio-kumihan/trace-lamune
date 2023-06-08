@@ -61,35 +61,6 @@
   }
 }
 
-@mixin view-more-curtains {
-  .view-more-curtains {
-    position: absolute;
-    top: 0;
-    left: 0%;
-    width: 110%;
-    height: 180%;
-    content: "";
-    background-color: #fff;
-    z-index: get_index(view-more-curtains);
-  }
-}
-
-@mixin over-green {
-  .over-green {
-    position: absolute;
-    top: 0;
-    left: 0%;
-    padding-bottom: 10px;
-    border-bottom: 3px solid $color-green;
-    opacity: 0;
-    overflow: hidden;
-    .frame {
-      white-space: nowrap;
-      color: $color-green;
-    }
-  }
-}
-
 // colors
 $color-black: #3C3835;
 $color-gray: #DEDEDE;
@@ -98,16 +69,16 @@ $color-green: #4BBE92;
 $color-bule: blue;
 
 // 紐付けたい要素を変数名にして配列に格納する。
-// curtains-view-more+1
 // about-salon-vibe-last+1
 // contents-title+3
+// header
 // sp-header+10
 // styling-view-modal+11
 // loading+11
 $index-map: 
-  curtains-view-more,
   about-salon-vibe-last,
   contents-title,
+  header,
   sp-header,
   styling-view-modal,
   loading;
@@ -219,35 +190,6 @@ figcaption {
   }
 }
 
-// // 確認が取れるまでとりあえず残す
-// .view-more {
-//   position: relative;
-//   .wrapper {
-//     @include view-more-curtains;
-//     @include over-green;
-//     display: inline-block;
-//     position: absolute;
-//     top: 0;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     margin-top: 40px;
-//     padding-bottom: 10px;
-//     font-family: "Roboto Condensed", sans-serif;
-//     font-size: 18px;
-//     font-weight: 700;
-//     line-height: 1;
-//     color: $color-black;
-//     white-space: nowrap;
-//     transition: .5s;
-//     border-bottom: 3px solid $color-black;
-//     @media (hover: hover) {
-//       &:hover {
-//         cursor: pointer;
-//       }
-//     }
-//   }
-// }
-
 .loading {
   position: fixed;
   top: 0;
@@ -277,6 +219,7 @@ figcaption {
 header {
   position: relative;
   background-color: blue;
+  z-index: get_index(header);
   .image.logo {
     position: absolute;
     top: 30px;
@@ -347,9 +290,6 @@ header {
     }
   }
 }
-.active {
-  display: block;
-}
 
 @media screen and (max-width: 700px) {
   header {
@@ -366,13 +306,9 @@ header {
       align-items: center;
       height: inherit;
       padding: 0 20px;
-      .frame.logo {
+      .image.logo {
         position: unset;
-        width: 80px;
-        height: 40px;
-        img {
-          object-fit: contain;
-        }
+        width: 57px;
       }
       .main-nav {
         flex-direction: row;
@@ -503,8 +439,9 @@ main {
     .container {
       .contents-title {
         position: absolute;
-        top: 60px;
+        top: 45px;
         left: -50px;
+        padding-top: 15px;
         writing-mode: vertical-rl;
         font-family: "Roboto Condensed", sans-serif;
         font-size: 22px;
@@ -513,19 +450,11 @@ main {
         text-transform: uppercase;
         counter-increment: section-title-num;
         z-index: get_index(contents-title);
+        border-top: 1px solid $color-black;
         &::before {
           position: absolute;
-          top: -60px;
+          top: -45px;
           content: "0"counter(section-title-num) ;
-        }
-        &::after {
-          position: absolute;
-          top: -15px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 18px;
-          height: 0;
-          border-top: 1px solid $color-black;
         }
       }
     }
@@ -552,12 +481,11 @@ main {
     line-height: 2.5;
     text-align: right;
   }
-
   .bgm-play-stop {
     position: absolute;
     bottom: 30px;
     right: 30px;
-    padding: 10px 7px;
+    padding: 10px 8px;
     font-size: 20px;
     background-color: #fff;
     border-radius: 50%;
@@ -641,13 +569,15 @@ main {
     }
     .access {
       display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
       margin-top: 120px;
       .image {
-        flex: 1;
+        width: 40%;
         height: 90%;
       }
       dl {
-        flex: 1.3;
+        width: 55%;
         margin-left: 50px;
         div {
           @include dl-container;
@@ -662,17 +592,17 @@ main {
         }
       }
     }
-    .map {
-      .media-wrapper {
-        @include scroll-trigger-curtains;
-        position: relative;
-        margin-top: 70px;
+    .media-wrapper {
+      @include scroll-trigger-curtains;
+      position: relative;
+      width: 100%;
+      height: 53vh;
+      margin-top: 80px;
+      object-fit: cover;
+      overflow: hidden;
+      iframe {
         width: 100%;
-        aspect-ratio: 4/1.75;
-        overflow: hidden;
-        iframe {
-          width: 100%;
-        }
+        height: 100%;
       }
     }
   }
@@ -822,7 +752,6 @@ main {
 // スライダーの周辺機器
 .swiper-button-prev,
 .swiper-button-next {
-  top: 60%;
   mix-blend-mode: difference;
   &::after {
     content: "\f177";
@@ -862,7 +791,7 @@ main {
           padding-left: 50px;
           dl {
             margin-top: 45px;
-            .dl-container {
+            div {
               @include dl-container;
               margin-bottom: 0px;
               padding-bottom: 0;
@@ -899,6 +828,14 @@ main {
     padding: 0 20px;
   }
 
+  .view-more-frame {
+    margin-top: 40px;
+    .view-more-anchor {
+      font-size: 13px;
+      border-bottom: 2px solid $color-black;
+    }
+  }
+
   main {
     section {
       .container {
@@ -906,12 +843,17 @@ main {
           position: relative;
           top: 0;
           left: 0;
-          padding-left: 60px;
-          writing-mode: horizontal-tb;
+          margin-left: 45px;
+          padding-top: 0;
+          padding-left: 15px;
           font-size: 26px;
+          line-height: 1;
+          writing-mode: horizontal-tb;
+          border: none;
+          border-left: 1px solid $color-black;
           &:before {
             top: 0;
-            left: 0;
+            left: -45px;
           }
           &::after {
             top: 50%;
@@ -923,17 +865,6 @@ main {
             border-left: 1px solid $color-black;
           }
         }
-      }
-    }
-  }
-  .view-more {
-    .wrapper {
-      margin-top: 30px;
-      font-size: 14px;
-      border-bottom: 2px solid $color-black;
-      .view-more-curtains {
-        // left: -60%;
-        left: 0;
       }
     }
   }
@@ -949,7 +880,7 @@ main {
     .media-wrapper {
       position: relative;
       width: 100%;
-      aspect-ratio: 1/1.5;
+      aspect-ratio: 1;
       overflow: hidden;
       video {
         width: 100%;
@@ -959,6 +890,7 @@ main {
       .bgm-play-stop {
         bottom: 15px;
         right: 15px;
+        font-size: 15px;
       }
     }
     figcaption {
@@ -969,14 +901,15 @@ main {
       line-height: 2;
     }
   }
-
   .blog {
     margin-top: 80px;
-    padding: 0 0 145px;
+    padding: 0;
     .container {
       ul {
+        grid-auto-flow: column;
+        grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 30px;
+        row-gap: 10px;
         column-gap: 50px;
         margin-top: 20px;
         padding-right: 20px;
@@ -986,21 +919,15 @@ main {
             display: none;
           }
           a {
-            .frame {
-              img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-              }
+            p {
+              margin-top: 15px;
             }
           }
         }
       }
     }
   }
-
   .about {
-    margin-top: 0;
     padding-top: 0;
     .container {
       .salon-vibe {
@@ -1014,14 +941,15 @@ main {
             margin-top: 45px;
           }
           .media-wrapper {
-              width: 80%;
-            }
+            width: 80%;
+            margin-top: 0;
+            aspect-ratio: 4/3;
+          }
           figcaption {
             margin-top: 20px;
             padding: 0;
             font-size: 14px;
-            line-height: 1.7;
-            // text-align: left;
+            line-height: 2;
           }
         }
       }
@@ -1035,33 +963,25 @@ main {
       .access {
         flex-direction: column;
         margin-top: 60px;
-        .frame {
-          img {
-            height: 100%;
-          }
-        }
         dl {
           margin-top: 30px;
           margin-left: 0;
-          .dl-container {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
+          div {
+            margin-bottom: 17px;
+            padding-bottom: 17px;
             dt, dd {
-              font-size: 13px;
+              font-size: 12px;
               line-height: 1.5;
             }
           }
         }
       }
-      .map {
-        .media-wrapper {
-          margin-top: 10px;
-          aspect-ratio: 1/0.9;
-        }
+      .media-wrapper {
+        margin-top: 10px;
+        height: 45vh;
       }
     }
   }
-
   .staff {
     margin-top: 35px;
     .container {
@@ -1096,19 +1016,17 @@ main {
       }
     }
   }
-
   .menu {
     margin-top: 40px;
     .container {
       .frame {
         width: 100%;
-        aspect-ratio: 1/0.75;
         margin-top: 20px;
       }
       dl {
         grid-template-columns: repeat(1, 1fr);
         margin-top: 30px;
-        .dl-container {
+        div {
           font-size: 13px;
           margin-bottom: 14px;
           padding-bottom: 14px;
@@ -1116,14 +1034,17 @@ main {
       }
     }
   }
-
   .style {
-    margin-top: 50px;
+    margin-top: 90px;
+    padding-top: 0;
     .container {
       .visual {
         margin-top: 20px;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(4, 1fr);
+      }
+      .view-more-frame {
+        margin-top: 25px;
       }
     }
   }
@@ -1144,9 +1065,9 @@ main {
   #styling-view-modal .swiper-button-next {
     right: 1.5%;
   }
-  
   .recruit {
-    margin-top: 95px;
+    margin-top: 105px;
+    padding-top: 0;
     .container {
       .join-our-team {
         margin-top: 20px;
@@ -1158,17 +1079,21 @@ main {
           }
           figcaption {
             width: 100%;
-            margin-top: 15px;
+            margin-top: 30px;
             padding: 0;
-            text-align: center;
+            font-size: 14px;
+            text-align: left;
             dl {
               margin-top: 20px;
-              .dl-container {
+              div {
                 &:first-of-type {
                   margin-bottom: 15px;
                 }
+                dt {
+                  min-width: 45px;
+                }
                 dt, dd {
-                  font-size: 16px;
+                  font-size: 15px;
                 }
               }
             }
@@ -1207,7 +1132,7 @@ footer {
   footer {
     margin-top: 115px;
     padding: 0;
-    height: 40vh;
+    height: 35vh;
     .visual {
       height: 100%;
       video {

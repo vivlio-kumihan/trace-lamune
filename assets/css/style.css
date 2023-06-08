@@ -474,7 +474,6 @@ figcaption {
   padding-bottom: 13px;
   color: transparent;
   background-color: #fff;
-  z-index: 1;
 }
 
 .loading {
@@ -507,6 +506,7 @@ figcaption {
 header {
   position: relative;
   background-color: blue;
+  z-index: 3;
 }
 header .image.logo {
   position: absolute;
@@ -579,10 +579,6 @@ header .main-nav ul:last-of-type li:last-of-type .fa-brands {
   }
 }
 
-.active {
-  display: block;
-}
-
 @media screen and (max-width: 700px) {
   header {
     position: fixed;
@@ -600,14 +596,9 @@ header .main-nav ul:last-of-type li:last-of-type .fa-brands {
     height: inherit;
     padding: 0 20px;
   }
-  header .previous-container .frame.logo {
+  header .previous-container .image.logo {
     position: unset;
-    width: 80px;
-    height: 40px;
-  }
-  header .previous-container .frame.logo img {
-    -o-object-fit: contain;
-       object-fit: contain;
+    width: 57px;
   }
   header .previous-container .main-nav {
     flex-direction: row;
@@ -730,8 +721,9 @@ main section {
 }
 main section .container .contents-title {
   position: absolute;
-  top: 60px;
+  top: 45px;
   left: -50px;
+  padding-top: 15px;
   writing-mode: vertical-rl;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 22px;
@@ -739,21 +731,13 @@ main section .container .contents-title {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   counter-increment: section-title-num;
-  z-index: 3;
+  z-index: 2;
+  border-top: 1px solid #3C3835;
 }
 main section .container .contents-title::before {
   position: absolute;
-  top: -60px;
+  top: -45px;
   content: "0" counter(section-title-num);
-}
-main section .container .contents-title::after {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 0;
-  border-top: 1px solid #3C3835;
 }
 
 .main-visual {
@@ -782,7 +766,7 @@ main section .container .contents-title::after {
   position: absolute;
   bottom: 30px;
   right: 30px;
-  padding: 10px 7px;
+  padding: 10px 8px;
   font-size: 20px;
   background-color: #fff;
   border-radius: 50%;
@@ -846,7 +830,7 @@ main section .container .contents-title::after {
 }
 .about .container .salon-vibe figure:last-of-type figcaption {
   text-align: right;
-  z-index: 2;
+  z-index: 1;
 }
 .about .container .salon-vibe figure .media-wrapper {
   position: relative;
@@ -875,14 +859,16 @@ main section .container .contents-title::after {
 }
 .about .container .access {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-top: 120px;
 }
 .about .container .access .image {
-  flex: 1;
+  width: 40%;
   height: 90%;
 }
 .about .container .access dl {
-  flex: 1.3;
+  width: 55%;
   margin-left: 50px;
 }
 .about .container .access dl div {
@@ -909,14 +895,16 @@ main section .container .contents-title::after {
     color: #4BBE92;
   }
 }
-.about .container .map .media-wrapper {
+.about .container .media-wrapper {
   position: relative;
-  margin-top: 70px;
   width: 100%;
-  aspect-ratio: 4/1.75;
+  height: 53vh;
+  margin-top: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
   overflow: hidden;
 }
-.about .container .map .media-wrapper .curtains {
+.about .container .media-wrapper .curtains {
   position: absolute;
   top: 0;
   left: 0;
@@ -925,8 +913,9 @@ main section .container .contents-title::after {
   content: "";
   background-color: #fff;
 }
-.about .container .map .media-wrapper iframe {
+.about .container .media-wrapper iframe {
   width: 100%;
+  height: 100%;
 }
 .about > .visual {
   display: grid;
@@ -1090,7 +1079,6 @@ main section .container .contents-title::after {
 
 .swiper-button-prev,
 .swiper-button-next {
-  top: 60%;
   mix-blend-mode: difference;
 }
 .swiper-button-prev::after,
@@ -1143,7 +1131,7 @@ main section .container .contents-title::after {
 .recruit .container .join-our-team figure figcaption dl {
   margin-top: 45px;
 }
-.recruit .container .join-our-team figure figcaption dl .dl-container {
+.recruit .container .join-our-team figure figcaption dl div {
   display: flex;
   margin-bottom: 12px;
   padding-bottom: 12px;
@@ -1152,31 +1140,31 @@ main section .container .contents-title::after {
   padding-bottom: 0;
   border-bottom: none;
 }
-.recruit .container .join-our-team figure figcaption dl .dl-container dt, .recruit .container .join-our-team figure figcaption dl .dl-container dd {
+.recruit .container .join-our-team figure figcaption dl div dt, .recruit .container .join-our-team figure figcaption dl div dd {
   font-weight: 300;
   line-height: 1.7;
 }
-.recruit .container .join-our-team figure figcaption dl .dl-container dt {
+.recruit .container .join-our-team figure figcaption dl div dt {
   min-width: 85px;
 }
-.recruit .container .join-our-team figure figcaption dl .dl-container:first-of-type {
+.recruit .container .join-our-team figure figcaption dl div:first-of-type {
   margin-bottom: 25px;
 }
-.recruit .container .join-our-team figure figcaption dl .dl-container dt, .recruit .container .join-our-team figure figcaption dl .dl-container dd {
+.recruit .container .join-our-team figure figcaption dl div dt, .recruit .container .join-our-team figure figcaption dl div dd {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.1em;
 }
-.recruit .container .join-our-team figure figcaption dl .dl-container dt {
+.recruit .container .join-our-team figure figcaption dl div dt {
   min-width: 60px;
 }
-.recruit .container .join-our-team figure figcaption dl .dl-container a {
+.recruit .container .join-our-team figure figcaption dl div a {
   transition: 0.3s;
 }
 @media (hover: hover) {
-  .recruit .container .join-our-team figure figcaption dl .dl-container a:hover {
+  .recruit .container .join-our-team figure figcaption dl div a:hover {
     color: #4BBE92;
   }
 }
@@ -1186,17 +1174,29 @@ main section .container .contents-title::after {
     width: 100%;
     padding: 0 20px;
   }
+  .view-more-frame {
+    margin-top: 40px;
+  }
+  .view-more-frame .view-more-anchor {
+    font-size: 13px;
+    border-bottom: 2px solid #3C3835;
+  }
   main section .container .contents-title {
     position: relative;
     top: 0;
     left: 0;
-    padding-left: 60px;
-    writing-mode: horizontal-tb;
+    margin-left: 45px;
+    padding-top: 0;
+    padding-left: 15px;
     font-size: 26px;
+    line-height: 1;
+    writing-mode: horizontal-tb;
+    border: none;
+    border-left: 1px solid #3C3835;
   }
   main section .container .contents-title:before {
     top: 0;
-    left: 0;
+    left: -45px;
   }
   main section .container .contents-title::after {
     top: 50%;
@@ -1206,14 +1206,6 @@ main section .container .contents-title::after {
     height: 18px;
     border-top: none;
     border-left: 1px solid #3C3835;
-  }
-  .view-more .wrapper {
-    margin-top: 30px;
-    font-size: 14px;
-    border-bottom: 2px solid #3C3835;
-  }
-  .view-more .wrapper .view-more-curtains {
-    left: 0;
   }
   :target {
     scroll-margin-top: 70px;
@@ -1228,7 +1220,7 @@ main section .container .contents-title::after {
   .main-visual .media-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 1/1.5;
+    aspect-ratio: 1;
     overflow: hidden;
   }
   .main-visual .media-wrapper video {
@@ -1240,6 +1232,7 @@ main section .container .contents-title::after {
   .main-visual .media-wrapper .bgm-play-stop {
     bottom: 15px;
     right: 15px;
+    font-size: 15px;
   }
   .main-visual figcaption {
     padding: 0;
@@ -1250,11 +1243,13 @@ main section .container .contents-title::after {
   }
   .blog {
     margin-top: 80px;
-    padding: 0 0 145px;
+    padding: 0;
   }
   .blog .container ul {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 30px;
+    row-gap: 10px;
     -moz-column-gap: 50px;
          column-gap: 50px;
     margin-top: 20px;
@@ -1266,14 +1261,10 @@ main section .container .contents-title::after {
   .blog .container ul li:nth-of-type(5) {
     display: none;
   }
-  .blog .container ul li a .frame img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+  .blog .container ul li a p {
+    margin-top: 15px;
   }
   .about {
-    margin-top: 0;
     padding-top: 0;
   }
   .about .container .salon-vibe {
@@ -1290,12 +1281,14 @@ main section .container .contents-title::after {
   }
   .about .container .salon-vibe figure .media-wrapper {
     width: 80%;
+    margin-top: 0;
+    aspect-ratio: 4/3;
   }
   .about .container .salon-vibe figure figcaption {
     margin-top: 20px;
     padding: 0;
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 2;
   }
   .about .visual {
     grid-template-columns: repeat(2, 1fr);
@@ -1306,24 +1299,21 @@ main section .container .contents-title::after {
     flex-direction: column;
     margin-top: 60px;
   }
-  .about .container .access .frame img {
-    height: 100%;
-  }
   .about .container .access dl {
     margin-top: 30px;
     margin-left: 0;
   }
-  .about .container .access dl .dl-container {
-    margin-bottom: 15px;
-    padding-bottom: 15px;
+  .about .container .access dl div {
+    margin-bottom: 17px;
+    padding-bottom: 17px;
   }
-  .about .container .access dl .dl-container dt, .about .container .access dl .dl-container dd {
-    font-size: 13px;
+  .about .container .access dl div dt, .about .container .access dl div dd {
+    font-size: 12px;
     line-height: 1.5;
   }
-  .about .container .map .media-wrapper {
+  .about .container .media-wrapper {
     margin-top: 10px;
-    aspect-ratio: 1/0.9;
+    height: 45vh;
   }
   .staff {
     margin-top: 35px;
@@ -1361,25 +1351,28 @@ main section .container .contents-title::after {
   }
   .menu .container .frame {
     width: 100%;
-    aspect-ratio: 1/0.75;
     margin-top: 20px;
   }
   .menu .container dl {
     grid-template-columns: repeat(1, 1fr);
     margin-top: 30px;
   }
-  .menu .container dl .dl-container {
+  .menu .container dl div {
     font-size: 13px;
     margin-bottom: 14px;
     padding-bottom: 14px;
   }
   .style {
-    margin-top: 50px;
+    margin-top: 90px;
+    padding-top: 0;
   }
   .style .container .visual {
     margin-top: 20px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
+  }
+  .style .container .view-more-frame {
+    margin-top: 25px;
   }
   #styling-view-modal .swiper-button-prev,
   #styling-view-modal .swiper-button-next {
@@ -1400,7 +1393,8 @@ main section .container .contents-title::after {
     right: 1.5%;
   }
   .recruit {
-    margin-top: 95px;
+    margin-top: 105px;
+    padding-top: 0;
   }
   .recruit .container .join-our-team {
     margin-top: 20px;
@@ -1414,18 +1408,22 @@ main section .container .contents-title::after {
   }
   .recruit .container .join-our-team figure figcaption {
     width: 100%;
-    margin-top: 15px;
+    margin-top: 30px;
     padding: 0;
-    text-align: center;
+    font-size: 14px;
+    text-align: left;
   }
   .recruit .container .join-our-team figure figcaption dl {
     margin-top: 20px;
   }
-  .recruit .container .join-our-team figure figcaption dl .dl-container:first-of-type {
+  .recruit .container .join-our-team figure figcaption dl div:first-of-type {
     margin-bottom: 15px;
   }
-  .recruit .container .join-our-team figure figcaption dl .dl-container dt, .recruit .container .join-our-team figure figcaption dl .dl-container dd {
-    font-size: 16px;
+  .recruit .container .join-our-team figure figcaption dl div dt {
+    min-width: 45px;
+  }
+  .recruit .container .join-our-team figure figcaption dl div dt, .recruit .container .join-our-team figure figcaption dl div dd {
+    font-size: 15px;
   }
 }
 footer {
@@ -1457,7 +1455,7 @@ footer figcaption {
   footer {
     margin-top: 115px;
     padding: 0;
-    height: 40vh;
+    height: 35vh;
   }
   footer .visual {
     height: 100%;
