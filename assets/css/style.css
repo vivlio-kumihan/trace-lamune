@@ -431,76 +431,29 @@ figcaption {
   letter-spacing: 0.1em;
 }
 
-.view-more {
-  position: relative;
+.view-more-frame {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
 }
-.view-more .wrapper {
+.view-more-frame .view-more-anchor {
   display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 40px;
+  position: relative;
   padding-bottom: 10px;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
-  color: #3C3835;
-  white-space: nowrap;
-  transition: 0.5s;
-  border-bottom: 3px solid #3C3835;
-}
-.view-more .wrapper .view-more-curtains {
-  position: absolute;
-  top: 0;
-  left: 0%;
-  width: 110%;
-  height: 180%;
-  content: "";
-  background-color: #fff;
-  z-index: 1;
-}
-.view-more .wrapper .over-green {
-  position: absolute;
-  top: 0;
-  left: 0%;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #4BBE92;
-  opacity: 0;
-  overflow: hidden;
-}
-.view-more .wrapper .over-green .frame {
-  white-space: nowrap;
-  color: #4BBE92;
-}
-@media (hover: hover) {
-  .view-more .wrapper:hover {
-    cursor: pointer;
-  }
-}
-
-.test-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 500px;
-  margin-top: 100px;
-  background-color: #eee;
-}
-.test-container .view-more-frame {
-  position: relative;
-  margin: 0 auto;
-  padding-bottom: 10px;
-  font-size: 30px;
-  font-weight: 900;
+  text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  border-bottom: 3px solid black;
-  color: black;
+  color: #3C3835;
+  border-bottom: 3px solid #3C3835;
 }
-.test-container .view-more-frame .curtains-word {
+.view-more-frame .view-more-anchor:hover {
+  cursor: pointer;
+}
+.view-more-frame .view-more-anchor .curtains-word {
   position: absolute;
   top: 0;
   left: 0;
@@ -508,9 +461,20 @@ figcaption {
   color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
-  background-color: green;
-  border-bottom: 3px solid green;
+  text-shadow: 0 0 0.25px #4BBE92;
+  background-color: #4BBE92;
+  border-bottom: 3px solid #4BBE92;
   overflow: hidden;
+  visibility: hidden;
+}
+.view-more-frame .view-more-anchor .curtains-view-more {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-bottom: 13px;
+  color: transparent;
+  background-color: #fff;
+  z-index: 1;
 }
 
 .loading {
@@ -867,7 +831,7 @@ main section .container .contents-title::after {
 }
 
 .about {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 .about .container {
   position: relative;

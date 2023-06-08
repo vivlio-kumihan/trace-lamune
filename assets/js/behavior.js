@@ -98,6 +98,10 @@ oneAfterAnother.forEach(elem => {
   })
 });
 
+
+////////////
+// カーテン効果
+
 // // 文章構造の中に視覚効果のカーテンをレイアウトするのは避ける。
 // // JSで補助する。そこで『insertAdjacentHTML』を使う。
 
@@ -127,19 +131,31 @@ oneAfterAnother.forEach(elem => {
 
 // // lastElementChildで取り込んでから処理するだけ。簡単な話。関数覚えようね。
 
+// 動画にカーテンを敷設する。
 document.querySelectorAll('.media-wrapper').forEach(elem => {
   elem.insertAdjacentHTML('afterbegin', '<div class="curtains"></div>')
 })
-// insertAdjacentHTMLを使っているところ。カーテン効果のための下準備としてHTML構造を変更する。
-document.querySelectorAll('.view-more .wrapper').forEach(elem => {
-  elem.insertAdjacentHTML('afterbegin', '<div class="view-more-curtains"></div>')
-  elem.insertAdjacentHTML('afterbegin', '<div class="over-green"><div class="frame">VIEW MORE</div></div>')
+
+// view moreにカーテンと文字のカーテンをつける
+const viewMoreFrame = document.querySelectorAll('.view-more-anchor')
+viewMoreFrame.forEach(elem => {
+  // カーテンを敷設
+  elem.insertAdjacentHTML('afterbegin', '<div class="curtains-view-more">view more</div>')
+  // 文字のカーテンを敷設
+  elem.insertAdjacentHTML('beforeend', '<div class="curtains-word">view more</div>')
 })
+const curtainsWord = document.querySelectorAll('.curtains-word')
+
+// // insertAdjacentHTMLを使っているところ。カーテン効果のための下準備としてHTML構造を変更する。
+// document.querySelectorAll('.view-more .wrapper').forEach(elem => {
+//   elem.insertAdjacentHTML('afterbegin', '<div class="view-more-curtains"></div>')
+//   elem.insertAdjacentHTML('afterbegin', '<div class="over-green"><div class="frame">VIEW MORE</div></div>')
+// })
 
 ////////////
 // .curtains　カーテン効果
 const curtains = Array.from(document.querySelectorAll(".curtains"))
-const viewMoreCurtains = Array.from(document.querySelectorAll(".view-more-curtains"))
+const viewMoreCurtains = Array.from(document.querySelectorAll(".curtains-view-more"))
 const curtainsAll = curtains.concat(viewMoreCurtains)
 
 curtainsAll.forEach(elem => {
@@ -159,176 +175,38 @@ curtainsAll.forEach(elem => {
 })
 
 
-
-
-// document.querySelectorAll('.media-wrapper').forEach(elem => {
-//   elem.insertAdjacentHTML('afterbegin', '<div class="curtains"></div>')
-// })
-
-const viewMoreFrame = document.getElementById('view-more-frame')
-viewMoreFrame.insertAdjacentHTML('beforeend', '<div id="curtains-word" class="curtains-word">view more</div>')
-const curtainsWord = document.getElementById('curtains-word')
-
-viewMoreFrame.addEventListener('mouseenter', function() {
-  gsap.set(curtainsWord, {
-    width: 0
-  })
-  gsap.to(curtainsWord, .3, {
-    width: 'auto'
-  })
-})
-viewMoreFrame.addEventListener('mouseleave', function() {
-  gsap.to(curtainsWord, .3, {
-    width: 0
-  })
-})
-
-
-
-// viewMoreFrame.addEventListener('mouseleave', function() {
-//   gsap.to(box, 1, {
-//     width: 'auto'
-//   })
-// })
-// box.addEventListener('mouseleave', function() {
-//   gsap.to(this, 1, {
-//     width: 'auto'
-//   })
-// })
-
-
-// document.getElementById('box').addEventListener('mouseleave', function() {
-//   console.log(this)
-//   gsap.to(this, .3, {
-//     width: 0,
-//     // opacity: 0
-//   })
-// })
-
 ////////////
-//  view-moreボタン
-const viewMore = document.querySelectorAll(".view-more")
-const overGreen = document.querySelectorAll('.over-green')
+// view more の文字のカーテン効果
 
-viewMore.forEach(elem => {
-  elem.addEventListener('mouseenter', () => {
-    overGreen.forEach(el => {
-      gsap.fromTo(el, .3, {
-        // left, rightどちらも同じ動き。なぜ？？？？？？？
-        transformOrigin: 'top left',
-        width: 0,
-        opacity: 1
-      }, {
-        width: '100%',
-        opacity: 1,
-      })
+viewMoreFrame.forEach(elem => {
+  elem.addEventListener('mouseenter', function () {
+    gsap.set(curtainsWord, {
+      visibility: 'visible',
+      // 緑の文字 左 → 右用
+      width: 0
+  
+      // // 緑の文字 右 → 左用
+      // width: 'auto'
+    })
+    gsap.to(curtainsWord, .3, {
+      // 緑の文字 左 → 右用
+      width: 'auto'
+  
+      // // 緑の文字 右 → 左用
+      // width: 0
     })
   })
-  elem.addEventListener('mouseleave', () => {
-    overGreen.forEach(el => {
-      gsap.fromTo(el, .3, {
-        // left, rightどちらも同じ動き。なぜ？？？？？？？？？
-        transformOrigin: 'top left'
-      }, { 
-        width: 0,
-        opacity: 1 
-      })
+  elem.addEventListener('mouseleave', function () {
+    gsap.to(curtainsWord, .3, {
+      // 緑の文字 左 → 右用
+      width: 0
+  
+      // // 緑の文字 右 → 左用
+      // width: 'auto'
     })
   })
+
 })
-
-
-// gsap.to('.vm::before', {
-//   scaleX: 1,
-//   duration: 0.5,
-//   ease: 'power2.out'
-// });
-
-// const vm = document.querySelectorAll(".vm")
-// vm.forEach(elem => {
-//   elem.addEventListener('mouseenter', () => {
-//     gsap.fromTo(elem, .3, {
-//       width: 'auto',
-//       opacity: 1
-//     }, {
-//       width: 0,
-//       opacity: 1
-//     })
-//   })
-//   elem.addEventListener('mouseleave', () => {
-//     gsap.fromTo(elem, .3, {
-//       // width: 0,
-//       // opacity: 1
-//     }, {
-//       width: 'auto',
-//       opacity: 1
-//     })
-//   })
-// })
-
-
-// vm.forEach(elem => {
-//   elem.addEventListener('mouseleave', () => {
-//     console.log('leave!')
-//     elem.classList.remove('hover-mark')
-
-//   })
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const vm = document.querySelectorAll(".vm")
-// vm.forEach(elem => {
-//   elem.addEventListener('mouseenter', () => {
-//     gsap.to(elem, .3, {
-
-//     })
-//   })
-//   elem.addEventListener('mouseleave', () => {
-//     gsap.to(elem, .3, {
-
-//     })
-//   })
-// })
-    
-    // overGreen.forEach(el => {
-    //   gsap.fromTo(el, .3, {
-    //     // left, rightどちらも同じ動き。なぜ？？？？？？？
-    //     transformOrigin: 'top left',
-    //     width: '0%',
-    //     opacity: 1
-    //   }, {
-    //     width: '100%',
-    //     opacity: 1,
-    //   })
-  // elem.addEventListener('mouseleave', () => {
-  //   overGreen.forEach(el => {
-  //     gsap.fromTo(el, .3, {
-  //       // left, rightどちらも同じ動き。なぜ？？？？？？？？？
-  //       transformOrigin: 'top left'
-  //     }, { 
-  //       width: 0,
-  //       opacity: 1 
-  //     })
-  //   })
-  // })
 
 
 ////////////
