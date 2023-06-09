@@ -1,0 +1,45 @@
+@use "../forwards" as fw;
+
+.menu {
+  margin-top: 150px;
+  .container {
+    position: relative;
+    .media-wrapper {
+      @include fw.scroll-trigger-curtains;
+      position: relative;
+    }
+    dl {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 60px;
+      margin-top: 50px;
+      div {
+        @include fw.dl-container;
+        dt {
+          width: 35%;
+        }
+        dd {
+          width: 65%;
+        }
+      }
+    }
+  }
+  @include fw.media-query-sp {
+    margin-top: 40px;
+    .container {
+      .frame {
+        width: 100%;
+        margin-top: 20px;
+      }
+      dl {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 30px;
+        div {
+          font-size: 13px;
+          margin-bottom: 14px;
+          padding-bottom: 14px;
+        }
+      }
+    }
+  }
+}
