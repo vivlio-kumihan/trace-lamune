@@ -1,4 +1,5 @@
 @use "../component/color" as col;
+@use "../library/function" as fn;
 
 @mixin caption-with-visual {
   writing-mode: vertical-rl;
@@ -39,6 +40,6 @@
     height: 100%;
     content: "";
     background-color: #fff;
-    z-index: get_index(curtains);
+    z-index: fn.get_index(curtains);
   }
 }
