@@ -27,9 +27,6 @@ body {
 .container {
   width: calc(100% - 160px);
   margin: 0 auto;
-  // @include fw.media-query-sp {
-  //   padding-left: 200px
-  // }
 }
 
 .image {
@@ -160,7 +157,12 @@ main {
   }
 }
 
+
+
 .container {
+  // @include fw.media-query-pc {
+  //   padding-left: 200px;
+  // }
   @include fw.media-query-sp {
     width: 100%;
     padding: 0 20px;

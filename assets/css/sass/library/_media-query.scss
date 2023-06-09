@@ -1,5 +1,10 @@
 @use '../component/size' as sz;
 
+// $break-point-pc: 1025px;
+// $break-point-tb-hi: 1024px;
+// $break-point-tb-lo: 600px;
+// $break-point-sp: 599px;
+
 @mixin media-query-pc() {
   @media screen and (min-width: sz.$break-point-pc) {
     @content
