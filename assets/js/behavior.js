@@ -1,6 +1,5 @@
 ////////////
 // ローディング・アニメーション
-
 function loaded() {
   const loading = document.getElementById('loading')
   loading.classList.remove('keep')
@@ -131,22 +130,18 @@ oneAfterAnother.forEach(elem => {
 // // lastElementChildで取り込んでから処理するだけ。簡単な話。関数覚えようね。
 
 // insertAdjacentHTMLを使っているところ。カーテン効果のための下準備としてHTML構造に新たに要素を加える。
+
+////////////
 // 動画にカーテンを敷設する。
 document.querySelectorAll('.media-wrapper').forEach(elem => {
   elem.insertAdjacentHTML('afterbegin', '<div class="curtains"></div>')
 })
-
-// view moreにカーテンと文字のカーテンをつける
-const viewMoreFrame = document.querySelectorAll('.view-more-anchor')
-viewMoreFrame.forEach(elem => {
-  // カーテンを敷設
+// view moreにカーテンを敷設する。
+const viewMoreBtn = document.querySelectorAll('.view-more-button')
+// view moreにカーテンを生成
+viewMoreBtn.forEach(elem => {
   elem.insertAdjacentHTML('afterbegin', '<div class="curtains-view-more">view more</div>')
-  // 文字のカーテンを敷設
-  elem.insertAdjacentHTML('beforeend', '<div class="curtains-word">view more</div>')
 })
-const curtainsWord = document.querySelectorAll('.curtains-word')
-
-////////////
 // .curtains　動画のカーテン効果
 const curtains = Array.from(document.querySelectorAll('.curtains'))
 const curtainsViewMore = Array.from(document.querySelectorAll('.curtains-view-more'))
@@ -169,41 +164,7 @@ curtainsAll.forEach(elem => {
 })
 
 ////////////
-// view more の文字のカーテン効果
-viewMoreFrame.forEach(elem => {
-  elem.addEventListener('mouseenter', function () {
-    // curtainsWordは配列のはずなのに処理を通すのが凄いのかなんなのか。
-    gsap.set(curtainsWord, {
-      visibility: 'visible',
-      // 緑の文字 左 → 右用
-      width: 0
-  
-      // // 緑の文字 右 → 左用
-      // width: 'auto'
-    })
-    gsap.to(curtainsWord, .3, {
-      // 緑の文字 左 → 右用
-      width: 'auto'
-  
-      // // 緑の文字 右 → 左用
-      // width: 0
-    })
-  })
-  elem.addEventListener('mouseleave', function () {
-    gsap.to(curtainsWord, .3, {
-      // 緑の文字 左 → 右用
-      width: 0
-  
-      // // 緑の文字 右 → 左用
-      // width: 'auto'
-    })
-  })
-})
-
-
-////////////
 // .fade-in　徐々に現れる
-
 const stGadeIn = document.querySelectorAll('.fade-in')
 stGadeIn.forEach(elem => {
   gsap.from(elem, .5, {
@@ -221,7 +182,6 @@ stGadeIn.forEach(elem => {
 ////////////
 // 一文字ずつ現れる
 // ドキュメント上の該当文章を一文字ごとにバラバラにしていく。
-
 function splitText(className) {
   // const textElements = document.querySelectorAll(className)
   className.forEach(elem => {
@@ -258,7 +218,7 @@ preCharAll.forEach(elem => {
 ////////////
 // スタイル・モデルの写真リストの表示管理
 const models = Array.from(document.getElementById('style-sample').children)
-const previewModelBtn = document.querySelector('.preview-model-btn')
+const previewModelBtn = document.getElementById('preview-model-btn')
 const numberOfPeople = models.length;
 const groupSize = Math.ceil(numberOfPeople / 12);
 const divideGroup = [];
