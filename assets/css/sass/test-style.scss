@@ -1,3 +1,11 @@
+body {
+  a {
+    text-decoration: none;
+  }
+}
+
+//////////////////////////////////////////////////////////////
+// css, js, gsap version //
 .test-container {
   display: flex;
   justify-content: center;
@@ -7,41 +15,92 @@
   margin-top: 100px;
   background-color: #eee;
   .view-more-frame {
-      position: relative;
-      margin: 0 auto;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    // 緑の文字 左 → 右用
+    // color: black;
+    // border-bottom: 3px solid black;
+
+    // 緑の文字 右 → 左用
+    color: green;
+    border-bottom: 3px solid green;
+
+    .curtains-word {
+      position: absolute;
+      top: 0;
+      left: 0;
       padding-bottom: 10px;
-      font-size: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      text-transform: uppercase;
-      white-space: nowrap;
-  
+      color: transparent;
+      background-clip: text;
+
       // 緑の文字 左 → 右用
-      // color: black;
-      // border-bottom: 3px solid black;
-  
+      // background-color: green;
+      // border-bottom: 3px solid green;
+
       // 緑の文字 右 → 左用
-      color: green;
-      border-bottom: 3px solid green;
-  
-      .curtains-word {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding-bottom: 10px;
-        color: transparent;
-        background-clip: text;
-  
-        // 緑の文字 左 → 右用
-        // background-color: green;
-        // border-bottom: 3px solid green;
-  
-        // 緑の文字 右 → 左用
-        background-color: black;
-        border-bottom: 3px solid black;
-        overflow: hidden;
-      }
+      background-color: black;
+      border-bottom: 3px solid black;
+      overflow: hidden;
     }
-  
+  }
 }
 
+//////////////////////////////////////////////////////////////
+// css simple version //
+.button {
+  $color: #3c3835;
+  $animatedColor: #4bbe92;
+  display: block;
+  position: relative;
+  width: max-content;
+  margin: 50px auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: $color;
+  transition: .3s;
+
+  &::before,
+  &::after {
+    display: block;
+    content: '';
+    height: 3px;
+  }
+
+  &::before {
+    //////////////////
+    // 通常、上のように&::before,　&::afterへまとめておく。
+    // そうすると、効果は、ただの点滅。しかもボーダーは変化なし。
+    // ::beforeにおくと左から右への効果になる。
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    //////////////////
+
+    width: 0%;
+    background-color: $animatedColor;
+    transition: .3s;
+  }
+
+  &::after {
+    width: 100%;
+    // 擬似要素::afterに設定する
+    // こちらはposition: relative;だから
+    margin-top: 10px;
+    background-color: $color;
+  }
+
+  &:hover {
+    color: $animatedColor;
+
+    &::before {
+      width: 100%;
+    }
+  }
+}

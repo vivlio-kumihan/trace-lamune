@@ -1,3 +1,7 @@
+body a {
+  text-decoration: none;
+}
+
 .test-container {
   display: flex;
   justify-content: center;
@@ -30,4 +34,40 @@
   background-color: black;
   border-bottom: 3px solid black;
   overflow: hidden;
+}
+
+.button {
+  display: block;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 50px auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #3c3835;
+  transition: 0.3s;
+}
+.button::before, .button::after {
+  display: block;
+  content: "";
+  height: 3px;
+}
+.button::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background-color: #4bbe92;
+  transition: 0.3s;
+}
+.button::after {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #3c3835;
+}
+.button:hover {
+  color: #4bbe92;
+}
+.button:hover::before {
+  width: 100%;
 }/*# sourceMappingURL=test-style.css.map */
