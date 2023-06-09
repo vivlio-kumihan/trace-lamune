@@ -1,0 +1,118 @@
+@use "../forwards" as fw;
+
+.style {
+  margin-top: 100px;
+  .container {
+    position: relative;
+    .visual {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      // grid-template-rows: repeat(3, 1fr);
+      // grid-template-rows で定義した範囲外の段の高さを定義する。
+      // つまり、grid-template-rowsを定義していない場合は、全ての段が対象となる
+      grid-auto-rows: 1fr;
+      gap: 6px;
+      li {
+        cursor: pointer;
+        display: none;
+        transition: .5;
+        opacity: 0;
+        &.models-block-defending {
+          display: block;
+        }
+      }
+    }
+    .view-more-button {
+      cursor: pointer;
+    }
+  }
+}
+
+// スライダーのモーダル以下
+.styling-view-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  transition: .5s;
+  visibility: hidden;
+  opacity: 0;
+  z-index: fw.get_index(styling-view-modal);
+  &.style-fade-in {
+    visibility: visible;
+    opacity: 1;
+  }
+  button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    &::before {
+      content: "\f00d";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 20px;
+      color: #eee;
+    }
+  }
+  .swiper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    max-width: 640px;
+    width: 100%;
+  }
+}
+// スライダーの周辺機器
+.swiper-button-prev,
+.swiper-button-next {
+  mix-blend-mode: difference;
+  &::after {
+    content: "\f177";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 20px;
+    color: #ddd;
+  }
+}
+.swiper-button-next {
+  &::after {
+    content: "\f178";
+  }
+}
+
+.style {
+  @include fw.media-query-sp {
+    margin-top: 90px;
+    .container {
+      .visual {
+        margin-top: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+      }
+      .view-more-frame {
+        margin-top: 25px;
+      }
+    }
+    #styling-view-modal .swiper-button-prev,
+    #styling-view-modal .swiper-button-next {
+      top: 50%;
+      width: 38px;
+      height: 38px;
+      background-color: rgba(50, 50, 50, 0.75);
+      mix-blend-mode: normal;
+      &::after {
+        font-size: 14px;
+      }
+    }
+    #styling-view-modal .swiper-button-prev {
+      left: 1.5%;
+    }
+    #styling-view-modal .swiper-button-next {
+      right: 1.5%;
+    }
+  }
+}

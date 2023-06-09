@@ -1,0 +1,80 @@
+@use "../forwards" as fw;
+
+.staff {
+  margin-top: 100px;
+  .container {
+    position: relative;
+    ul {
+      display: flex;
+      gap: 75px;
+      margin-right: 25px;
+      li {
+        position: relative;
+        .image {
+          height: 85%
+        }
+        .position {
+          @include fw.caption-with-visual;
+          position: absolute;
+          top: 0;
+          right: -25px;
+          font-size: 13px;
+          font-weight: 700;
+        }
+        .name {
+          position: relative;
+          padding-top: 25px;
+          font-family: "Noto Sans JP", sans-serif;
+          font-weight: 500;
+          font-size: 15px;
+          letter-spacing: .1em;
+          text-align: right;
+          span {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+            font-size: 28px;
+            text-align: left;
+            opacity: .6;
+          }
+        }
+      }
+    }
+  }
+  @include fw.media-query-sp {
+    margin-top: 95px;
+    .container {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 42px;
+        row-gap: 35px;
+        margin: 25px 15px 0 0;
+        li {
+          .image {
+            height: 75%;
+          }
+          .position {
+            right: -20px;
+            font-size: 13px;
+          }
+          .name {
+            margin-top: 9px;
+            font-size: 14px;
+            text-align: left;
+            span {
+              top: 0;
+              font-size: 14px;
+              letter-spacing: 0;
+              br {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

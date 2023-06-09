@@ -1,0 +1,218 @@
+@use "../forwards" as fw;
+
+html {
+  /* 本文: 14px */
+  font-size: 87.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: fw.$web_base;
+  color: fw.$color-black;
+}
+
+// :targetとして1行で書く
+// #blog,
+// #about,
+// #staff,
+// #menu,
+// #style,
+// #recruit {
+//   scroll-margin-top: 10px;
+// }
+:target {
+  scroll-margin-top: 10px;
+}
+
+.container {
+  width: calc(100% - 160px);
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+figcaption {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-feature-settings: "palt";
+  letter-spacing: .1em;
+}
+
+.view-more-frame {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+  .view-more-button {
+    display: block;
+    position: relative;
+    width: max-content;
+    margin: 0 auto;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    color: fw.$color-black;
+    transition: .3s;
+    &::before,
+    &::after {
+      display: block;
+      content: '';
+      height: 3px;
+    }
+    &::before {
+      //////////////////
+      // 通常、上のように&::before,　&::afterへまとめておく。
+      // そうすると、効果は、ただの点滅。しかもボーダーは変化なし。
+      // ::beforeにおくと左から右への効果になる。
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      //////////////////
+      width: 0%;
+      background-color: fw.$color-green;
+      transition: .3s;
+    }
+    &::after {
+      width: 100%;
+      // 擬似要素::afterに設定する
+      // こちらはposition: relative;だから
+      margin-top: 10px;
+      background-color: fw.$color-black;
+    }
+    &:hover {
+      color: fw.$color-green;
+      &::before {
+        width: 100%;
+      }
+    }
+    .curtains-view-more {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-bottom: 13px;
+      color: transparent;
+      background-color: #fff;
+    }
+  }
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  transition: 1.5s;
+  visibility: hidden;
+  opacity: 0;
+  z-index: fw.get_index(loading);
+  &.keep {
+    visibility: visible;
+    opacity: 1;
+  }
+  .image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+}
+
+main {
+  // 任意の値から始めることができる
+  counter-reset: section-title-num 0;
+  section {
+    .container {
+      .contents-title {
+        position: absolute;
+        top: 45px;
+        left: -50px;
+        padding-top: 15px;
+        writing-mode: vertical-rl;
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        counter-increment: section-title-num;
+        z-index: fw.get_index(contents-title);
+        border-top: 1px solid fw.$color-black;
+        &::before {
+          position: absolute;
+          top: -45px;
+          content: "0"counter(section-title-num) ;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  @include fw.media-query-sp {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+:target {
+  @include fw.media-query-sp {
+    scroll-margin-top: 70px;
+  }
+}
+
+.view-more-frame {
+  @include fw.media-query-sp {
+    margin-top: 40px;
+    .view-more-button {
+      font-size: 13px;
+      &::before, &::after {
+        height: 2px;
+      }
+    }
+  }
+}
+
+main {
+  @include fw.media-query-sp {
+    section {
+      .container {
+        .contents-title {
+          position: relative;
+          top: 0;
+          left: 0;
+          margin-left: 45px;
+          padding-top: 0;
+          padding-left: 15px;
+          font-size: 26px;
+          line-height: 1;
+          writing-mode: horizontal-tb;
+          border: none;
+          border-left: 1px solid fw.$color-black;
+          &:before {
+            top: 0;
+            left: -45px;
+          }
+          &::after {
+            top: 50%;
+            transform: translateY(-50%);
+            left: 45px;
+            width: 0;
+            height: 18px;
+            border-top: none;
+            border-left: 1px solid fw.$color-black;
+          }
+        }
+      }
+    }
+  }
+}
