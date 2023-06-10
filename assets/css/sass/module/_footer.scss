@@ -8,7 +8,7 @@ footer {
   padding-right: 80px;
   height: 50vh;
   overflow: hidden;
-  .visual {
+  figure {
     height: 100%;
     video {
       width: 100%;
@@ -34,16 +34,13 @@ footer {
     margin-top: 115px;
     padding: 0;
     height: 35vh;
-    .visual {
+    video {
       height: 100%;
-      video {
-        height: 100%;
-        object-fit: cover;
-      }
-      figcaption {
-        bottom: 30px;
-        white-space: nowrap;
-      }
+      object-fit: cover;
+    }
+    figcaption {
+      bottom: 30px;
+      white-space: nowrap;
     }
   }
 }

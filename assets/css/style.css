@@ -1472,16 +1472,16 @@ footer {
   height: 50vh;
   overflow: hidden;
 }
-footer .visual {
+footer figure {
   height: 100%;
 }
-footer .visual video {
+footer figure video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-footer .visual figcaption {
+footer figure figcaption {
   position: absolute;
   bottom: 40px;
   left: 50%;
@@ -1499,16 +1499,13 @@ footer .visual figcaption {
     padding: 0;
     height: 35vh;
   }
-  footer .visual {
-    height: 100%;
-  }
-  footer .visual video {
+  footer video {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  footer .visual figcaption {
+  footer figcaption {
     bottom: 30px;
     white-space: nowrap;
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */ss.map */
