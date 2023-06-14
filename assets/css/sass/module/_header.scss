@@ -72,12 +72,6 @@ header {
 
 header {
   @include fw.media-query-tab {
-    height: 40vh;
-  }
-}
-
-header {
-  @include fw.media-query-sp {
     position: fixed;
     top: 0;
     left: 0;

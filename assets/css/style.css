@@ -525,12 +525,6 @@ header .main-nav ul:last-of-type li:last-of-type .fa-brands {
 
 @media screen and (min-width: 601px) and (max-width: 900px) {
   header {
-    height: 40vh;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  header {
     position: fixed;
     top: 0;
     left: 0;
