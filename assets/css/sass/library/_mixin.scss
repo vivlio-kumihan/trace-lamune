@@ -1,5 +1,6 @@
-@use "../component/color" as col;
+// @use "../component/color" as col;
 @use "../library/function" as fn;
+@use "../variables" as var;
 
 @mixin caption-with-visual {
   writing-mode: vertical-rl;
@@ -12,7 +13,7 @@
   display: flex;
   margin-bottom: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px dotted col.$color-gray;
+  border-bottom: 1px dotted var.$color-gray;
   dt, dd {
     font-weight: 300;
     line-height: 1.7;

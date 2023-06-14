@@ -1,19 +1,47 @@
-@use '../component/size' as sz;
+@use "../variables" as var;
+
+// 汎用的なmediaQuery
+@mixin mediaQuery($breakPoint) {
+  @media screen and (max-width: $breakPoint) {
+    @content;
+  }
+}
 
 @mixin media-query-pc() {
-  @media screen and (min-width: sz.$break-point-pc) {
+  @media screen and (min-width: var.$break-point-pc) {
     @content;
   }
 }
 
 @mixin media-query-tb() {
-  @media screen and (min-width: sz.$break-point-tb-lo) and (max-width: sz.$break-point-tb-hi) {
+  @media screen and (min-width: var.$break-point-tb-lo) {
     @content;
   }
 }
 
 @mixin media-query-sp() {
-  @media screen and (max-width: sz.$break-point-sp) {
+  @media screen and (max-width: (var.$break-point-tb-lo - 1px)) {
     @content;
   }
 }
+
+
+// @use '../component/size' as var;
+
+// @mixin media-query-pc() {
+//   @media screen and (min-width: var.$break-point-pc) {
+//     @content;
+//   }
+// }
+
+// @mixin media-query-tb() {
+//   @media screen and (min-width: var.$break-point-tb-lo) and (max-width: var.$break-point-tb-hi) {
+//     @content;
+//   }
+// }
+
+// @mixin media-query-sp() {
+//   @media screen and (max-width: var.$break-point-sp) {
+//     @content;
+//   }
+// }
