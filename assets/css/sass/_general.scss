@@ -1,4 +1,4 @@
-@use "../forwards" as fw;
+@use "forwards" as fw;
 
 // WEBフォントのインポート
 /* Noto+Sans+JP gothic */
@@ -64,35 +64,6 @@ figcaption {
   letter-spacing: .1em;
 }
 
-main {
-  // 任意の値から始めることができる
-  counter-reset: section-title-num 0;
-  section {
-    .container {
-      .contents-title {
-        position: absolute;
-        top: 45px;
-        left: -50px;
-        padding-top: 15px;
-        writing-mode: vertical-rl;
-        font-family: "Roboto Condensed", sans-serif;
-        font-size: 22px;
-        font-weight: 700;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        counter-increment: section-title-num;
-        z-index: fw.get_index(contents-title);
-        border-top: 1px solid fw.$color-black;
-        &::before {
-          position: absolute;
-          top: -45px;
-          content: "0"counter(section-title-num);
-        }
-      }
-    }
-  }
-}
-
 .container {
   @include fw.media-query-sp {
     width: 100%;
@@ -103,40 +74,5 @@ main {
 :target {
   @include fw.media-query-sp {
     scroll-margin-top: 70px;
-  }
-}
-
-main {
-  @include fw.media-query-sp {
-    section {
-      .container {
-        .contents-title {
-          position: relative;
-          top: 0;
-          left: 0;
-          margin-left: 45px;
-          padding-top: 0;
-          padding-left: 15px;
-          font-size: 26px;
-          line-height: 1;
-          writing-mode: horizontal-tb;
-          border: none;
-          border-left: 1px solid fw.$color-black;
-          &:before {
-            top: 0;
-            left: -45px;
-          }
-          &::after {
-            top: 50%;
-            transform: translateY(-50%);
-            left: 45px;
-            width: 0;
-            height: 18px;
-            border-top: none;
-            border-left: 1px solid fw.$color-black;
-          }
-        }
-      }
-    }
   }
 }

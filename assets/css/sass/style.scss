@@ -2,11 +2,11 @@
 
 // 不要な記述はすべて削除完了。
 @use "destyle";
-@use "module/general";
+@use "general";
 
 @use "module/header";
 @use "module/footer";
-
+@use "module/page-top/main";
 @use "module/page-top/sec-about";
 @use "module/page-top/sec-blog";
 @use "module/page-top/sec-main-visual";
