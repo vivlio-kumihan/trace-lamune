@@ -2,17 +2,18 @@
 
 // 不要な記述はすべて削除完了。
 @use "destyle";
+@use "module/general";
 
 @use "module/header";
-@use "module/general";
-@use "module/sec-about";
-@use "module/sec-blog";
-@use "module/sec-main-visual";
-@use "module/sec-menu";
-@use "module/sec-recruit";
-@use "module/sec-staff";
-@use "module/sec-style";
 @use "module/footer";
+
+@use "module/page-top/sec-about";
+@use "module/page-top/sec-blog";
+@use "module/page-top/sec-main-visual";
+@use "module/page-top/sec-menu";
+@use "module/page-top/sec-recruit";
+@use "module/page-top/sec-staff";
+@use "module/page-top/sec-style";
 
 @use "component/loading";
 @use "component/view-more-frame";
