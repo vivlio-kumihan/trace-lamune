@@ -43,6 +43,30 @@
       }
     }
   }
+  @include fw.media-query-tab {
+    margin-top: 155px;
+    .container {
+      ul {
+        gap: 48px;
+        margin-right: 25px;
+        li {
+          .position {
+            right: -23px;
+          }
+          .image {
+            width: 100%;
+            height: 80%;
+          }
+          .name {
+            span {
+              font-size: 25px;
+              letter-spacing: 0;
+            }
+          }
+        }
+      }
+    }
+  }
   @include fw.media-query-sp {
     margin-top: 95px;
     .container {
