@@ -7,20 +7,27 @@
   }
 }
 
+// Wide PC: 1281px以上、PC: 901px以上、Tab: 601px以上
 @mixin media-query-wide-pc() {
-  @media screen and (min-width: var.$brakWidePc) {
+  @media screen and (min-width: var.$breakWidePc) {
     @content;
   }
 }
 
-@mixin media-query-tb() {
-  @media screen and (min-width: var.$break-point-tb-lo) {
+@mixin media-query-pc() {
+  @media screen and (min-width: var.$breakPc) {
+    @content;
+  }
+}
+
+@mixin media-query-tab() {
+  @media screen and (min-width: var.$breakTab) {
     @content;
   }
 }
 
 @mixin media-query-sp() {
-  @media screen and (max-width: (var.$brakPc - 1px)) {
+  @media screen and (max-width: (var.$breakTab - 1px)) {
     @content;
   }
 }
