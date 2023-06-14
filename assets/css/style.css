@@ -921,6 +921,26 @@ main section .container .contents-title::before {
   .about .container .salon-vibe figure:last-of-type {
     margin-top: 65px;
   }
+  .about .container .access {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+  .about .container .access .image {
+    width: 62%;
+    margin: 0 auto;
+  }
+  .about .container .access dl {
+    width: 100%;
+    margin: 60px 0 0 0;
+  }
+  .about .container .access dl div {
+    margin-bottom: 13px;
+    padding-bottom: 13px;
+  }
+  .about .container .media-wrapper.map {
+    margin-top: 35px;
+    height: 30vh;
+  }
   .about .visual {
     width: 100%;
     margin-top: 60px;
