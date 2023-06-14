@@ -7,8 +7,8 @@
   }
 }
 
-@mixin media-query-pc() {
-  @media screen and (min-width: var.$break-point-pc) {
+@mixin media-query-wide-pc() {
+  @media screen and (min-width: var.$brakWidePc) {
     @content;
   }
 }
@@ -20,7 +20,7 @@
 }
 
 @mixin media-query-sp() {
-  @media screen and (max-width: (var.$break-point-tb-lo - 1px)) {
+  @media screen and (max-width: (var.$brakPc - 1px)) {
     @content;
   }
 }
