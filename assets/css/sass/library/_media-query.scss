@@ -2,18 +2,18 @@
 
 @mixin media-query-pc() {
   @media screen and (min-width: sz.$break-point-pc) {
-    @content
+    @content;
   }
 }
 
 @mixin media-query-tb() {
   @media screen and (min-width: sz.$break-point-tb-lo) and (max-width: sz.$break-point-tb-hi) {
-    @content
+    @content;
   }
 }
 
 @mixin media-query-sp() {
   @media screen and (max-width: sz.$break-point-sp) {
-    @content
+    @content;
   }
 }

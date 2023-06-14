@@ -622,6 +622,11 @@ body {
   width: calc(100% - 160px);
   margin: 0 auto;
 }
+@media screen and (min-width: 1025px) {
+  .container {
+    padding-left: 200px;
+  }
+}
 
 .image {
   width: 100%;
