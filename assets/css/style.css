@@ -561,10 +561,10 @@ header .main-nav ul:last-of-type li:first-of-type::before {
   top: -28px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: "Font Awesome 6 Free";
   content: "\f133";
-  font-size: 20px;
-  font-weight: 100;
+  font-size: "20px";
+  font-family: "Font Awesome 6 Free";
+  font-weight: bold;
 }
 header .main-nav ul:last-of-type li:last-of-type .fa-brands {
   font-size: 28px;
@@ -1358,10 +1358,11 @@ footer figure figcaption {
   right: 20px;
 }
 .styling-view-modal button::before {
+  content: "";
   content: "\f00d";
+  font-size: "20px";
   font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 20px;
+  font-weight: bold;
   color: #eee;
 }
 .styling-view-modal .swiper {
@@ -1381,10 +1382,11 @@ footer figure figcaption {
 .swiper-button-prev::after,
 .swiper-button-next::after {
   content: "\f177";
+  font-size: "inherit";
   font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 20px;
+  font-weight: bold;
   color: #ddd;
+  --swiper-navigation-size: 14px ;
 }
 
 .swiper-button-next::after {

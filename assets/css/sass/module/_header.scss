@@ -53,10 +53,7 @@ header {
               top: -28px;
               left: 50%;
               transform: translateX(-50%);
-              font-family: "Font Awesome 6 Free";
-              content: "\f133";
-              font-size: 20px;
-              font-weight: 100;
+              @include fw.fontAwesome("\f133", "20px");
             }
           }
           &:last-of-type {

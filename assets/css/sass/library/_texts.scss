@@ -1,0 +1,9 @@
+// Font Awesomeのmixin 引数は、"ユニコード"、"フォントサイズ"、"FreeかBlandsか？"、"ウェイト"
+@mixin fontAwesome($unicode, $fontSize: "inherit", $fontFamily: "Free", $fontWeight: bold) {
+  content: $unicode;
+  font-size: $fontSize;
+  font-family: "Font Awesome 6 " + $fontFamily;
+  font-weight: $fontWeight;
+}
+
+// ドキュメントで使う書体の整理も兼ねてmixin化しておく場所として使う。
