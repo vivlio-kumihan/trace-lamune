@@ -1,6 +1,7 @@
 // Font Awesomeのmixin 引数は、"ユニコード"、"フォントサイズ"、"FreeかBlandsか？"、"ウェイト"
-@mixin fontAwesome($unicode, $fontFamily: Free, $fontWeight: 900) {
+@mixin fontAwesome($unicode, $fontSize: inherit, $fontFamily: Free, $fontWeight: 900) {
   content: $unicode;
+  font-size: $fontSize;
   font-family: "Font Awesome 6 " + $fontFamily;
   font-weight: $fontWeight;
 }

@@ -7,27 +7,29 @@
   }
 }
 
-// Wide PC: 1281px以上、PC: 901px以上、Tab: 601px以上
-@mixin media-query-wide-pc() {
-  @media screen and (min-width: var.$breakWidePc) {
-    @content;
-  }
-}
+// wide-pc: 1281px以上、pc: 901px以上、tab: 601px以上
 
-@mixin media-query-pc() {
-  @media screen and (min-width: var.$breakPc) {
-    @content;
-  }
-}
-
-@mixin media-query-tab() {
-  @media screen and (min-width: var.$breakTab) {
-    @content;
-  }
-}
-
+// 600px以下
 @mixin media-query-sp() {
   @media screen and (max-width: (var.$breakTab - 1px)) {
+    @content;
+  }
+}
+// 601px以上 900px以下
+@mixin media-query-tab() {
+  @media screen and (min-width: var.$breakTab) and (max-width: (var.$breakPc - 1)) {
+    @content;
+  }
+}
+// 901px以上 1280px以下
+@mixin media-query-pc() {
+  @media screen and (min-width: var.$breakPc) and (max-width: (var.$breakWidePc - 1)) {
+    @content;
+  }
+}
+// 1281px以上
+@mixin media-query-wide-pc() {
+  @media screen and (min-width: var.$breakWidePc) {
     @content;
   }
 }
