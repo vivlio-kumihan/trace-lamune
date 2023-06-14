@@ -106,18 +106,6 @@ main {
   }
 }
 
-.view-more-frame {
-  @include fw.media-query-sp {
-    margin-top: 40px;
-    .view-more-button {
-      font-size: 13px;
-      &::before, &::after {
-        height: 2px;
-      }
-    }
-  }
-}
-
 main {
   @include fw.media-query-sp {
     section {

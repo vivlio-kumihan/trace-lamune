@@ -681,18 +681,6 @@ main section .container .contents-title::before {
 }
 
 @media screen and (max-width: 600px) {
-  .view-more-frame {
-    margin-top: 40px;
-  }
-  .view-more-frame .view-more-button {
-    font-size: 13px;
-  }
-  .view-more-frame .view-more-button::before, .view-more-frame .view-more-button::after {
-    height: 2px;
-  }
-}
-
-@media screen and (max-width: 600px) {
   main section .container .contents-title {
     position: relative;
     top: 0;
@@ -1512,4 +1500,16 @@ footer figure figcaption {
   padding-bottom: 13px;
   color: transparent;
   background-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .view-more-frame {
+    margin-top: 40px;
+  }
+  .view-more-frame .view-more-button {
+    font-size: 13px;
+  }
+  .view-more-frame .view-more-button::before, .view-more-frame .view-more-button::after {
+    height: 2px;
+  }
 }/*# sourceMappingURL=style.css.map */
