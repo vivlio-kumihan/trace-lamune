@@ -53,7 +53,8 @@ header {
               top: -28px;
               left: 50%;
               transform: translateX(-50%);
-              @include fw.fontAwesome("\f133", "20px");
+              @include fw.fontAwesome("\f133");
+              size: 20px;
             }
           }
           &:last-of-type {

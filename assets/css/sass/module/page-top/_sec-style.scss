@@ -50,7 +50,8 @@
     right: 20px;
     &::before {
       content: "";
-      @include fw.fontAwesome("\f00d", "20px");
+      @include fw.fontAwesome("\f00d");
+      font-size: 20px;
       color: #eee;
     }
   }
