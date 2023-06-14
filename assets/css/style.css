@@ -523,7 +523,7 @@ header .main-nav ul:last-of-type li:last-of-type .fa-brands {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   header {
     position: fixed;
     top: 0;
@@ -656,6 +656,7 @@ header .main-nav ul:last-of-type li:last-of-type .fa-brands {
     border-left: 1px solid #3C3835;
   }
 }
+
 footer {
   position: relative;
   margin-top: 200px;

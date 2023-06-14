@@ -24,24 +24,3 @@
     @content;
   }
 }
-
-
-// @use '../component/size' as var;
-
-// @mixin media-query-pc() {
-//   @media screen and (min-width: var.$break-point-pc) {
-//     @content;
-//   }
-// }
-
-// @mixin media-query-tb() {
-//   @media screen and (min-width: var.$break-point-tb-lo) and (max-width: var.$break-point-tb-hi) {
-//     @content;
-//   }
-// }
-
-// @mixin media-query-sp() {
-//   @media screen and (max-width: var.$break-point-sp) {
-//     @content;
-//   }
-// }
