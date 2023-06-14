@@ -17,7 +17,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap");
 /* font-family: "Lato", sans-serif; */
 
-
+// general elements
 html {
   /* 本文: 14px */
   font-size: 87.5%;
@@ -45,9 +45,6 @@ body {
 .container {
   width: calc(100% - 160px);
   margin: 0 auto;
-  @include fw.media-query-wide-pc {
-    padding-left: 200px
-  }
 }
 
 .image {
@@ -64,15 +61,28 @@ figcaption {
   letter-spacing: .1em;
 }
 
+:target {
+  @include fw.media-query-sp {
+    scroll-margin-top: 70px;
+  }
+}
+
+// media query ////////////////////////////////////
+.container {
+  @include fw.media-query-wide-pc {
+    padding-left: 200px
+  }
+}
+
+.container {
+  @include fw.media-query-tab {
+    width: 90%;
+  }
+}
+
 .container {
   @include fw.media-query-sp {
     width: 100%;
     padding: 0 20px;
-  }
-}
-
-:target {
-  @include fw.media-query-sp {
-    scroll-margin-top: 70px;
   }
 }

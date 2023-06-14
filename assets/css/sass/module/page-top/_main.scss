@@ -30,6 +30,41 @@ main {
 }
 
 main {
+  @include fw.media-query-tab {
+    section {
+      .container {
+        .contents-title {
+          position: relative;
+          top: -35px;
+          left: 0;
+          margin-left: 45px;
+          padding-top: 0;
+          padding-left: 15px;
+          font-size: 26px;
+          line-height: 1;
+          writing-mode: horizontal-tb;
+          border: none;
+          border-left: 1px solid fw.$color-black;
+          &:before {
+            top: 0;
+            left: -45px;
+          }
+          &::after {
+            top: 50%;
+            transform: translateY(-50%);
+            left: 45px;
+            width: 0;
+            height: 18px;
+            border-top: none;
+            border-left: 1px solid fw.$color-black;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
   @include fw.media-query-sp {
     section {
       .container {

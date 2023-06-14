@@ -30,6 +30,24 @@
     border-radius: 50%;
     cursor: pointer;
   }
+  @include fw.media-query-tab {
+    display: block;
+    margin: 0;
+    figcaption {
+      position: absolute;
+      bottom: 4%;
+      left: 5%;
+      padding: 0;
+      font-size: 14px;
+      line-height: 2.25;
+      letter-spacing: .2em;
+      text-align: left;
+      color: #fff;
+    }
+    .bgm-play-stop {
+      font-size: 17px;
+    }
+  }
   @include fw.media-query-sp {
     flex-direction: column;
     justify-content: center;

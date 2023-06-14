@@ -58,7 +58,17 @@
       background-color: #fff;
     }
   }
+  @include fw.media-query-tab {
+    margin-top: 40px;
+    .view-more-button {
+      font-size: 15px;
+      &::before, &::after {
+        height: 2px;
+      }
+    }
+  }
 }
+
 
 .view-more-frame {
   @include fw.media-query-sp {

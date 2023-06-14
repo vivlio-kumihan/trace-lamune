@@ -414,11 +414,6 @@ body {
   width: calc(100% - 160px);
   margin: 0 auto;
 }
-@media screen and (min-width: 1281px) {
-  .container {
-    padding-left: 200px;
-  }
-}
 
 .image {
   width: 100%;
@@ -436,15 +431,27 @@ figcaption {
 }
 
 @media screen and (max-width: 600px) {
+  :target {
+    scroll-margin-top: 70px;
+  }
+}
+
+@media screen and (min-width: 1281px) {
   .container {
-    width: 100%;
-    padding: 0 20px;
+    padding-left: 200px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .container {
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  :target {
-    scroll-margin-top: 70px;
+  .container {
+    width: 100%;
+    padding: 0 20px;
   }
 }
 
@@ -733,6 +740,35 @@ main section .container .contents-title::before {
   content: "0" counter(section-title-num);
 }
 
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  main section .container .contents-title {
+    position: relative;
+    top: -35px;
+    left: 0;
+    margin-left: 45px;
+    padding-top: 0;
+    padding-left: 15px;
+    font-size: 26px;
+    line-height: 1;
+    writing-mode: horizontal-tb;
+    border: none;
+    border-left: 1px solid #3C3835;
+  }
+  main section .container .contents-title:before {
+    top: 0;
+    left: -45px;
+  }
+  main section .container .contents-title::after {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 45px;
+    width: 0;
+    height: 18px;
+    border-top: none;
+    border-left: 1px solid #3C3835;
+  }
+}
+
 @media screen and (max-width: 600px) {
   main section .container .contents-title {
     position: relative;
@@ -871,6 +907,24 @@ main section .container .contents-title::before {
   grid-template-columns: repeat(4, 1fr);
   width: calc(100% - 80px);
   margin-top: 120px;
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .about .container .salon-vibe figure figcaption {
+    font-size: 14.5px;
+  }
+  .about .container .salon-vibe figure .media-wrapper {
+    flex: 1.7;
+  }
+  .about .container .salon-vibe figure .media-wrapper video {
+    aspect-ratio: 4/3.3;
+  }
+  .about .container .salon-vibe figure:last-of-type {
+    margin-top: 65px;
+  }
+  .about .visual {
+    width: 100%;
+    margin-top: 60px;
+  }
 }
 @media screen and (max-width: 600px) {
   .about {
@@ -1032,6 +1086,26 @@ main section .container .contents-title::before {
   background-color: #fff;
   border-radius: 50%;
   cursor: pointer;
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .main-visual {
+    display: block;
+    margin: 0;
+  }
+  .main-visual figcaption {
+    position: absolute;
+    bottom: 4%;
+    left: 5%;
+    padding: 0;
+    font-size: 14px;
+    line-height: 2.25;
+    letter-spacing: 0.2em;
+    text-align: left;
+    color: #fff;
+  }
+  .main-visual .bgm-play-stop {
+    font-size: 17px;
+  }
 }
 @media screen and (max-width: 600px) {
   .main-visual {
@@ -1512,6 +1586,17 @@ main section .container .contents-title::before {
   padding-bottom: 13px;
   color: transparent;
   background-color: #fff;
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .view-more-frame {
+    margin-top: 40px;
+  }
+  .view-more-frame .view-more-button {
+    font-size: 15px;
+  }
+  .view-more-frame .view-more-button::before, .view-more-frame .view-more-button::after {
+    height: 2px;
+  }
 }
 
 @media screen and (max-width: 600px) {

@@ -80,6 +80,30 @@
     width: calc(100% - 80px);
     margin-top: 120px;
   }
+  @include fw.media-query-tab {
+    .container {
+      .salon-vibe {
+        figure {
+          figcaption {
+            font-size: 14.5px;
+          }
+          .media-wrapper {
+            flex: 1.7;
+            video {
+              aspect-ratio: 4/3.3;
+            }
+          }
+          &:last-of-type {
+            margin-top: 65px;
+          }
+        }
+      }
+    }
+    .visual {
+      width: 100%;
+      margin-top: 60px;
+    }
+  }
   @include fw.media-query-sp {
     margin-top: 100px;
     .container {
