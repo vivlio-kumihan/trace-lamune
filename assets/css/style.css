@@ -394,7 +394,6 @@ th {
   font-weight: bold;
 }
 
-/* font-family: "Lato", sans-serif; */
 header {
   position: relative;
   z-index: 3;
@@ -603,6 +602,7 @@ header .main-nav ul:last-of-type li:last-of-type .fa-brands {
     border-left: 1px solid #3C3835;
   }
 }
+/* font-family: "Lato", sans-serif; */
 html {
   /* 本文: 14px */
   font-size: 87.5%;
