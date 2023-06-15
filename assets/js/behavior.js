@@ -6,8 +6,11 @@ function loaded() {
 }
 // ウィンドウを読み込んで2秒後には次に遷移する。
 window.addEventListener('load', () => {
-    setTimeout(loaded, 1500)
-  })
+  setTimeout(loaded, 1500)
+})
+
+// 最低でも５秒後には表示
+setTimeout(loaded, 5000)
     
     
 ////////////

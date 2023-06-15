@@ -442,7 +442,7 @@ figcaption {
   }
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .container {
     width: 90%;
   }
@@ -473,7 +473,7 @@ header .main-nav {
   position: fixed;
   top: 28px;
   right: 0;
-  width: 80px;
+  width: 85px;
   height: 100vh;
 }
 header .main-nav .to-section-link-btn {
@@ -530,7 +530,12 @@ header .main-nav ul:last-of-type li:last-of-type .fa-brands {
   }
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (min-width: 1281px) {
+  header .previous-container .main-nav {
+    width: 80px;
+  }
+}
+@media screen and (max-width: 900px) {
   header {
     position: fixed;
     top: 0;
@@ -693,9 +698,11 @@ footer figure figcaption {
   letter-spacing: 0;
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (max-width: 900px) {
   footer {
     height: 40vh;
+    margin-top: 120px;
+    padding-right: 0;
   }
 }
 
@@ -740,7 +747,13 @@ main section .container .contents-title::before {
   content: "0" counter(section-title-num);
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (min-width: 1281px) {
+  main section .container .contents-title {
+    left: 0;
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 900px) {
   main section .container .contents-title {
     position: relative;
     top: -35px;
@@ -818,7 +831,7 @@ main section .container .contents-title::before {
 }
 .about .container .salon-vibe figure .media-wrapper {
   position: relative;
-  flex: 1.8;
+  flex: 1.4;
 }
 .about .container .salon-vibe figure .media-wrapper .curtains {
   position: absolute;
@@ -831,7 +844,7 @@ main section .container .contents-title::before {
 }
 .about .container .salon-vibe figure .media-wrapper video {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 4/3.5;
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
@@ -849,8 +862,8 @@ main section .container .contents-title::before {
   margin-top: 120px;
 }
 .about .container .access .image {
-  width: 40%;
-  height: 90%;
+  width: 47%;
+  aspect-ratio: 4/2.7;
 }
 .about .container .access dl {
   width: 55%;
@@ -883,7 +896,7 @@ main section .container .contents-title::before {
 .about .container .media-wrapper.map {
   position: relative;
   width: 100%;
-  height: 38vh;
+  aspect-ratio: 3/1.325;
   margin-top: 80px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -908,15 +921,21 @@ main section .container .contents-title::before {
   width: calc(100% - 80px);
   margin-top: 120px;
 }
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (min-width: 1281px) {
+  .about .container .access {
+    align-items: center;
+  }
+  .about .container .access .image {
+    width: 50%;
+    aspect-ratio: 4/2.9;
+  }
+}
+@media screen and (max-width: 900px) {
   .about .container .salon-vibe figure figcaption {
     font-size: 14.5px;
   }
   .about .container .salon-vibe figure .media-wrapper {
     flex: 1.7;
-  }
-  .about .container .salon-vibe figure .media-wrapper video {
-    aspect-ratio: 4/3.3;
   }
   .about .container .salon-vibe figure:last-of-type {
     margin-top: 65px;
@@ -939,7 +958,6 @@ main section .container .contents-title::before {
   }
   .about .container .media-wrapper.map {
     margin-top: 35px;
-    height: 30vh;
   }
   .about .visual {
     width: 100%;
@@ -965,6 +983,8 @@ main section .container .contents-title::before {
   .about .container .salon-vibe figure .media-wrapper {
     width: 80%;
     margin-top: 0;
+  }
+  .about .container .salon-vibe figure .media-wrapper video {
     aspect-ratio: 4/3;
   }
   .about .container .salon-vibe figure figcaption {
@@ -986,7 +1006,7 @@ main section .container .contents-title::before {
   }
   .about .container .access .image {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4/2.9;
   }
   .about .container .access dl {
     width: 100%;
@@ -1003,7 +1023,7 @@ main section .container .contents-title::before {
   }
   .about .container .media-wrapper.map {
     margin-top: 10px;
-    height: 45vh;
+    aspect-ratio: 3/2.6;
   }
 }
 
@@ -1050,7 +1070,7 @@ main section .container .contents-title::before {
   line-height: 1.2;
   font-feature-settings: "palt";
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .blog {
     margin-top: 80px;
   }
@@ -1074,13 +1094,18 @@ main section .container .contents-title::before {
     margin-top: 15px;
   }
 }
+@media screen and (max-width: 600px) {
+  .blog {
+    margin-top: 80px;
+  }
+}
 
 .main-visual {
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
   position: relative;
-  margin-right: 80px;
+  margin-right: 85px;
 }
 .main-visual video {
   flex: 0.73;
@@ -1107,7 +1132,18 @@ main section .container .contents-title::before {
   border-radius: 50%;
   cursor: pointer;
 }
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (min-width: 1281px) {
+  .main-visual {
+    margin-right: 80px;
+  }
+  .main-visual .media-wrapper {
+    width: 60%;
+  }
+  .main-visual .per-char {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 900px) {
   .main-visual {
     display: block;
     margin: 0;
@@ -1117,8 +1153,8 @@ main section .container .contents-title::before {
     bottom: 4%;
     left: 5%;
     padding: 0;
-    font-size: 14px;
-    line-height: 2.25;
+    font-size: 16px;
+    line-height: 1.9;
     letter-spacing: 0.2em;
     text-align: left;
     color: #fff;
@@ -1138,7 +1174,7 @@ main section .container .contents-title::before {
   .main-visual .media-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1.07;
     overflow: hidden;
   }
   .main-visual .media-wrapper video {
@@ -1153,16 +1189,23 @@ main section .container .contents-title::before {
     font-size: 15px;
   }
   .main-visual figcaption {
+    position: unset;
+    margin-top: 35px;
     padding: 0;
-    padding-top: 30px;
     text-align: center;
     font-size: 14px;
     line-height: 2;
+    color: #3C3835;
+  }
+}
+@media screen and (max-width: 428px) {
+  .main-visual .media-wrapper {
+    aspect-ratio: 1/1;
   }
 }
 
 .menu {
-  margin-top: 150px;
+  margin-top: 155px;
 }
 .menu .container {
   position: relative;
@@ -1205,9 +1248,34 @@ main section .container .contents-title::before {
 .menu .container dl div dd {
   width: 65%;
 }
+@media screen and (min-width: 1281px) {
+  .menu {
+    margin-top: 210px;
+  }
+  .menu .container dl {
+    margin-top: 65px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .menu {
+    margin-top: 165px;
+  }
+  .menu .container dl {
+    margin-top: 35px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+  .menu .container dl div {
+    margin-bottom: 13px;
+    padding-bottom: 13px;
+  }
+  .menu .container dl div dt {
+    width: 50%;
+  }
+}
 @media screen and (max-width: 600px) {
   .menu {
-    margin-top: 40px;
+    margin-top: 100px;
   }
   .menu .container .frame {
     width: 100%;
@@ -1236,7 +1304,7 @@ main section .container .contents-title::before {
 }
 .recruit .container .join-our-team figure .media-wrapper {
   width: 50%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 4/3.2;
 }
 .recruit .container .join-our-team figure .media-wrapper .curtains {
   position: absolute;
@@ -1255,7 +1323,9 @@ main section .container .contents-title::before {
 }
 .recruit .container .join-our-team figure figcaption {
   width: 50%;
+  font-size: 16px;
   line-height: 2.2;
+  letter-spacing: 0.2em;
   padding-left: 50px;
 }
 .recruit .container .join-our-team figure figcaption dl {
@@ -1298,6 +1368,33 @@ main section .container .contents-title::before {
     color: #4BBE92;
   }
 }
+@media screen and (min-width: 1281px) {
+  .recruit {
+    margin-top: 200px;
+  }
+  .recruit .container .join-our-team figure .media-wrapper {
+    width: 63%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .recruit .container .join-our-team figure .media-wrapper {
+    width: 55%;
+    aspect-ratio: 4/3.05;
+  }
+  .recruit .container .join-our-team figure figcaption {
+    padding-left: 30px;
+  }
+  .recruit .container .join-our-team figure figcaption dl {
+    margin-top: 40px;
+  }
+  .recruit .container .join-our-team figure figcaption dl div dt, .recruit .container .join-our-team figure figcaption dl div dd {
+    font-size: 16px;
+    letter-spacing: 0.04em;
+  }
+  .recruit .container .join-our-team figure figcaption dl div dt {
+    min-width: 55px;
+  }
+}
 @media screen and (max-width: 600px) {
   .recruit {
     margin-top: 105px;
@@ -1316,7 +1413,7 @@ main section .container .contents-title::before {
     width: 100%;
     margin-top: 30px;
     padding: 0;
-    font-size: 14px;
+    font-size: 15px;
     text-align: left;
   }
   .recruit .container .join-our-team figure figcaption dl {
@@ -1334,21 +1431,22 @@ main section .container .contents-title::before {
 }
 
 .staff {
-  margin-top: 100px;
+  margin-top: 160px;
+  padding-bottom: 50px;
 }
 .staff .container {
   position: relative;
 }
 .staff .container ul {
   display: flex;
-  gap: 75px;
-  margin-right: 25px;
+  gap: 80px;
+  margin-right: 20px;
 }
 .staff .container ul li {
   position: relative;
 }
 .staff .container ul li .image {
-  height: 85%;
+  height: 90%;
 }
 .staff .container ul li .position {
   writing-mode: vertical-rl;
@@ -1380,9 +1478,21 @@ main section .container .contents-title::before {
   text-align: left;
   opacity: 0.6;
 }
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (min-width: 1281px) {
+  .staff {
+    margin-top: 200px;
+  }
+  .staff .container ul li .name {
+    font-size: 16px;
+  }
+  .staff .container ul li .name span {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 900px) {
   .staff {
     margin-top: 155px;
+    padding-bottom: 0;
   }
   .staff .container ul {
     gap: 48px;
@@ -1435,7 +1545,7 @@ main section .container .contents-title::before {
 }
 
 .style {
-  margin-top: 100px;
+  margin-top: 145px;
 }
 .style .container {
   position: relative;
@@ -1517,6 +1627,19 @@ main section .container .contents-title::before {
   content: "\f178";
 }
 
+@media screen and (min-width: 1281px) {
+  .style {
+    margin-top: 155px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .style {
+    margin-top: 140px;
+  }
+  .style .container .view-more-frame {
+    margin-top: 35px;
+  }
+}
 @media screen and (max-width: 600px) {
   .style {
     margin-top: 90px;
@@ -1627,7 +1750,7 @@ main section .container .contents-title::before {
   color: transparent;
   background-color: #fff;
 }
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .view-more-frame {
     margin-top: 40px;
   }

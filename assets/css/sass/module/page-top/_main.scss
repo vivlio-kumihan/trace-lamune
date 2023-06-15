@@ -30,6 +30,16 @@ main {
 }
 
 main {
+  @include fw.media-query-wide-pc {
+    section {
+      .container {
+        .contents-title {
+          left: 0;
+          font-size: 28px;
+        }
+      }
+    }
+  }
   @include fw.media-query-tab {
     section {
       .container {

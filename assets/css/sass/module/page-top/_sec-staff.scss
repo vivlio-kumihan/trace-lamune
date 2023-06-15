@@ -1,17 +1,18 @@
 @use "../../forwards" as fw;
 
 .staff {
-  margin-top: 100px;
+  margin-top: 160px;
+  padding-bottom: 50px;
   .container {
     position: relative;
     ul {
       display: flex;
-      gap: 75px;
-      margin-right: 25px;
+      gap: 80px;
+      margin-right: 20px;
       li {
         position: relative;
         .image {
-          height: 85%
+          height: 90%
         }
         .position {
           @include fw.caption-with-visual;
@@ -43,8 +44,24 @@
       }
     }
   }
+  @include fw.media-query-wide-pc {
+    margin-top: 200px;
+    .container {
+      ul {
+        li {
+          .name {
+            font-size: 16px;
+            span {
+              font-size: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
   @include fw.media-query-tab {
     margin-top: 155px;
+    padding-bottom: 0;
     .container {
       ul {
         gap: 48px;

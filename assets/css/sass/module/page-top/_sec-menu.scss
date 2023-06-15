@@ -1,7 +1,7 @@
 @use "../../forwards" as fw;
 
 .menu {
-  margin-top: 150px;
+  margin-top: 155px;
   .container {
     position: relative;
     .media-wrapper {
@@ -24,8 +24,33 @@
       }
     }
   }
+  @include fw.media-query-wide-pc {
+    margin-top: 210px;
+    .container {
+      dl {
+        margin-top: 65px;
+      }
+    }
+
+  }
+  @include fw.media-query-tab {
+    margin-top: 165px;
+    .container {
+      dl {
+        margin-top: 35px;
+        column-gap: 30px;
+        div {
+          margin-bottom: 13px;
+          padding-bottom: 13px;
+          dt {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
   @include fw.media-query-sp {
-    margin-top: 40px;
+    margin-top: 100px;
     .container {
       .frame {
         width: 100%;

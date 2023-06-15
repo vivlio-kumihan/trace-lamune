@@ -39,8 +39,8 @@
       }
     }
   }
-  @include fw.media-query-sp {
-    margin-top: 80px;
+  @include fw.media-query-tab {
+    margin-top: 80px; 
     .container {
       ul {
         grid-auto-flow: column;
@@ -63,5 +63,8 @@
         }
       }
     }
+  }
+  @include fw.media-query-sp {
+    margin-top: 80px;
   }
 }

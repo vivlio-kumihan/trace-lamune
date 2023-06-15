@@ -17,7 +17,7 @@ header {
     position: fixed;
     top: 28px;
     right: 0;
-    width: 80px;
+    width: 85px;
     height: 100vh;
     .to-section-link-btn {
       display: block;
@@ -71,6 +71,14 @@ header {
 }
 
 header {
+  @include fw.media-query-wide-pc {
+    .previous-container {
+      .main-nav {
+        width: 80px;
+      }
+
+    }
+  }
   @include fw.media-query-tab {
     position: fixed;
     top: 0;

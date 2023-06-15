@@ -17,7 +17,7 @@
 }
 // 601px以上 900px以下
 @mixin media-query-tab() {
-  @media screen and (min-width: var.$breakTab) and (max-width: (var.$breakPc - 1)) {
+  @media screen and (max-width: (var.$breakPc - 1)) {
     @content;
   }
 }

@@ -1,7 +1,7 @@
 @use "../../forwards" as fw;
 
 .style {
-  margin-top: 100px;
+  margin-top: 145px;
   .container {
     position: relative;
     .visual {
@@ -82,6 +82,19 @@
 }
 
 .style {
+  @include fw.media-query-wide-pc {
+    margin-top: 155px;
+  }
+  @include fw.media-query-tab {
+    margin-top: 140px;
+    .container {
+      .visual {
+      }
+      .view-more-frame {
+        margin-top: 35px;
+      }
+    }
+  }
   @include fw.media-query-sp {
     margin-top: 90px;
     .container {

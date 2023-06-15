@@ -5,7 +5,7 @@
   flex-direction: row-reverse;
   align-items: flex-end;
   position: relative;
-  margin-right: 80px;
+  margin-right: 85px;
   video {
     flex: .73;
     min-width: 400px;
@@ -30,6 +30,16 @@
     border-radius: 50%;
     cursor: pointer;
   }
+  @include fw.media-query-wide-pc {
+    margin-right: 80px;
+    .media-wrapper {
+      width: 60%;
+    }
+    .per-char {
+      width: 40%;
+    }
+
+  }
   @include fw.media-query-tab {
     display: block;
     margin: 0;
@@ -38,8 +48,8 @@
       bottom: 4%;
       left: 5%;
       padding: 0;
-      font-size: 14px;
-      line-height: 2.25;
+      font-size: 16px;
+      line-height: 1.9;
       letter-spacing: .2em;
       text-align: left;
       color: #fff;
@@ -57,7 +67,7 @@
     .media-wrapper {
       position: relative;
       width: 100%;
-      aspect-ratio: 1;
+      aspect-ratio: 1/1.07;
       overflow: hidden;
       video {
         width: 100%;
@@ -71,11 +81,18 @@
       }
     }
     figcaption {
+      position: unset;
+      margin-top: 35px;
       padding: 0;
-      padding-top: 30px;
       text-align: center;
       font-size: 14px;
       line-height: 2;
+      color: fw.$color-black;
+    }
+  }
+  @include fw.mediaQuery(428px) {
+    .media-wrapper {
+      aspect-ratio: 1/1;
     }
   }
 }
